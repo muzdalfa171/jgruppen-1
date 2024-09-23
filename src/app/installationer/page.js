@@ -5,12 +5,12 @@ const Installationer = () => {
   return (
     <section className="pt-40">
       {/* First Section - Installationer */}
-      <section className="container mx-auto px-6 md:px-24 py-12">
+      <section className="xl:px-96 px-6 py-12">
         {/* Grid Layout for Two Columns */}
-        <div className="grid grid-cols-1 p-6 md:p-12 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 p-6  md:p-12 md:grid-cols-2 gap-8">
           {/* Left Column */}
-          <div className="border-8 absolute top-[12rem] overflow-hidden left-[1.5rem] md:left-[3.5rem] border-[#4a536e] w-[20rem] h-60 md:w-[25rem] pl-4"></div>
-          <div className="relative px-6 top-8 z-40 bg-white space-y-6">
+          <div className="border-8 absolute top-[12rem] overflow-hidden left-[1.5rem] md:left-[3.5rem] xl:left-[22rem] border-[#4a536e] w-[20rem] h-60 md:w-[25rem] pl-4"></div>
+          <div className="relative px-6  top-8 z-40 bg-white space-y-6">
             <h2 className="text-3xl font-bold text-[#4a536e] mb-6">
               <span className="text-5xl">Installationer</span>
             </h2>
@@ -66,7 +66,7 @@ const Installationer = () => {
       </section>
 
       {/* Second Section - Grund inom installation */}
-      <section className="w-full bg-[#f0f1f5] px-6 md:px-24 py-12">
+      <section className="w-full bg-[#f0f1f5] px-6 md:px-[8rem] py-12">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Text Content */}
@@ -104,7 +104,7 @@ const Installationer = () => {
       </section>
 
       {/* Third Section */}
-      <div className="grid grid-cols-1 my-12 md:grid-cols-2 gap-8 px-6 md:px-24 py-12">
+      <div className="grid grid-cols-1 my-12 md:grid-cols-2 gap-8 px-6 md:px-[8rem] py-12">
         {/* Image on the Left */}
         <div className="flex justify-center order-2 md:order-1">
           <Image

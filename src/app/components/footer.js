@@ -70,7 +70,7 @@ const Footer = () => {
     <footer className="bg-gray-100 px-5 py-8">
       <div className="mx-auto flex flex-col md:flex-row gap-8 justify-evenly px-4 md:px-8">
         {/* Logo Section */}
-        <div className="w-full md:w-4/12 flex justify-center md:justify-start p-8">
+        <div className="w-full md:w-4/12 flex md:justify-center justify-start p-8">
           <img
             src="/img/jgruppen-logo-skugga.png"
             alt="JGruppen"
@@ -79,7 +79,7 @@ const Footer = () => {
         </div>
 
         {/* Company Details */}
-        <div className="w-full md:w-4/12 p-8 text-left md:text-left md:flex md:justify-start">
+        <div className="w-full md:w-4/12 p-8 text-left md:text-center md:flex md:justify-start">
           <div>
             <h3 className="font-bold text-lg">JGruppen AB</h3>
             <p className="mt-4">

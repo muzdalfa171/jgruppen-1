@@ -9,7 +9,9 @@ const JobCard = ({ job }) => {
       </div>
       <div className="px-6 py-4">
         {/* Job Title */}
-        <div className="font-bold text-2xl mb-2 text-[#636466]">{job.title}</div>
+        <div className="font-bold text-2xl mb-2 text-[#636466]">
+          {job.title}
+        </div>
         {/* Designation */}
         <p className="text-gray-700 text-base">
           <span className="font-semibold">Designation: </span>
@@ -22,8 +24,7 @@ const JobCard = ({ job }) => {
         </p>
       </div>
       <div className="px-6 pt-4 pb-2 text-center">
-        {/* Redirect Button */}
-        <Link href={`/job/${job.id}`}>
+        <Link href={`/jobba-med-oss/jobcarddetails`}>
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 w-full rounded">
             More Details →
           </button>
@@ -49,49 +50,7 @@ const JobList = () => {
       title: "Software Engineer",
       designation: "Developer",
       location: "Stockholm, Sweden",
-    },
-    {
-        id: 1,
-        logo: "/img/JGruppen-logo.png", // Replace with actual logo path
-        title: "CNC Operator",
-        designation: "Operator",
-        location: "Motala, Sweden",
-      },
-      {
-        id: 2,
-        logo: "/img/JGruppen-logo.png",
-        title: "Software Engineer",
-        designation: "Developer",
-        location: "Stockholm, Sweden",
-      },
-      {
-        id: 1,
-        logo: "/img/JGruppen-logo.png", // Replace with actual logo path
-        title: "CNC Operator",
-        designation: "Operator",
-        location: "Motala, Sweden",
-      },
-      {
-        id: 2,
-        logo: "/img/JGruppen-logo.png",
-        title: "Software Engineer",
-        designation: "Developer",
-        location: "Stockholm, Sweden",
-      },
-      {
-        id: 1,
-        logo: "/img/JGruppen-logo.png", // Replace with actual logo path
-        title: "CNC Operator",
-        designation: "Operator",
-        location: "Motala, Sweden",
-      },
-      {
-        id: 2,
-        logo: "/img/JGruppen-logo.png",
-        title: "Software Engineer",
-        designation: "Developer",
-        location: "Stockholm, Sweden",
-      },
+    }
     // Add more jobs as needed
   ];
 

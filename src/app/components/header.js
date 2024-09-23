@@ -31,6 +31,25 @@ export default function Header() {
     }
   }, [pathname]);
 
+  const handleMenuClick = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const links = [
+    { href: "/", label: "Hem" },
+    { href: "#", label: "Tjänster" },
+    { href: "/installationer", label: "Installationer" },
+    { href: "/underhall", label: "Underhåll" },
+    { href: "/produkter", label: "Produkter" },
+    { href: "/om-oss", label: "Om oss" },
+    { href: "/kontakt", label: "Kontakt" },
+    { href: "/jobba-med-oss", label: "Jobba med oss" },
+  ];
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -53,37 +72,21 @@ export default function Header() {
             pathname === "/" && !isScrolled ? "text-white" : "text-[#4A536E]"
           }`}
         >
-          <Link href="/" className="hover:overline  decoration-4">
-            Hem
-          </Link>
-          <Link href="#" className="hover:overline  decoration-4">
-            Tjänster
-          </Link>
-          <Link href="/installationer" className="hover:overline  decoration-4">
-            Installationer
-          </Link>
-          <Link href="/underhall" className="hover:overline  decoration-4">
-            Underhåll
-          </Link>
-          <Link href="/produkter" className="hover:overline  decoration-4">
-            Produkter
-          </Link>
-          <Link href="/om-oss" className="hover:overline  decoration-4">
-            Om oss
-          </Link>
-          <Link href="/kontakt" className="hover:overline  decoration-4">
-            Kontakt
-          </Link>
-          <Link href="/jobba-med-oss" className="hover:overline  decoration-4">
-            Jobba med oss
-          </Link>
+          {links.map((link) => (
+            <Link key={link.href} href={link.href}>
+              <span
+                className={`hover:overline decoration-4 cursor-pointer ${
+                  pathname === link.href ? "underline decoration-4" : ""
+                }`}
+              >
+                {link.label}
+              </span>
+            </Link>
+          ))}
         </nav>
 
         {/* Mobile Menu Toggle Button */}
-        <button
-          className="block md:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+        <button className="block md:hidden" onClick={handleMenuClick}>
           <svg
             width="24"
             height="24"
@@ -105,31 +108,17 @@ export default function Header() {
 
       {/* Mobile Navbar */}
       {menuOpen && (
-        <nav className="md:hidden flex flex-col bg-black  bg-opacity-70 text-white space-y-4 py-6 px-4 absolute w-full left-0 top-16">
-          <Link href="/" className="hover:overline  decoration-4">
-            Hem
-          </Link>
-          <Link href="/#" className="hover:overline  decoration-4">
-            Tjänster
-          </Link>
-          <Link href="/installationer" className="hover:overline  decoration-4">
-            Installationer
-          </Link>
-          <Link href="/underhall" className="hover:overline  decoration-4">
-            Underhåll
-          </Link>
-          <Link href="/produkter" className="hover:overline  decoration-4">
-            Produkter
-          </Link>
-          <Link href="/om-oss" className="hover:overline  decoration-4">
-            Om oss
-          </Link>
-          <Link href="/kontakt" className="hover:overline  decoration-4">
-            Kontakt
-          </Link>
-          <Link href="/jobba-med-oss" className="hover:overline  decoration-4">
-            Jobba med oss
-          </Link>
+        <nav className="md:hidden flex flex-col bg-[#818285] text-white space-y-4 py-6 px-4 absolute w-full left-0 top-22">
+          {links.map((link) => (
+            <Link key={link.href} href={link.href}>
+              <span
+                className="hover:overline decoration-4 cursor-pointer "
+                onClick={closeMobileMenu}
+              >
+                {link.label}
+              </span>
+            </Link>
+          ))}
         </nav>
       )}
     </header>
