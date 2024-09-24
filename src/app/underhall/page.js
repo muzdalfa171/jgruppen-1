@@ -52,11 +52,11 @@ const Underhall = () => {
         </section>
         <div>
           <Image
-            src="/img/category3.jpg"
+            src="/img/etienne-girardet-sgYamIzhAhg-unsplash.jpg"
             width={1000}
             height={1000}
             alt="Tillverkning och försäljning"
-            className="h-[30rem] w-full"
+            className="h-[30rem] w-full bg-cover"
           />
         </div>
       </section>

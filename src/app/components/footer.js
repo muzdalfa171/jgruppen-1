@@ -1,11 +1,19 @@
+
+
 // import Link from "next/link";
 
 // const Footer = () => {
 //   return (
 //     <footer className="bg-gray-100 px-5 py-8">
+//       <div className="flex justify-center">
+//         <h4 className="py-4 text-center">
+//           casino svenska | bästa casino online | svenska nätcasino
+//         </h4>
+//       </div>
+
 //       <div className="mx-auto flex flex-col md:flex-row gap-8 justify-evenly px-4 md:px-8">
 //         {/* Logo Section */}
-//         <div className="w-full md:w-4/12 flex justify-center md:justify-start p-8">
+//         <div className="w-full md:w-4/12 flex flex-col items-center justify-start p-8">
 //           <img
 //             src="/img/jgruppen-logo-skugga.png"
 //             alt="JGruppen"
@@ -13,8 +21,8 @@
 //           />
 //         </div>
 
-//         {/* Company Details */}
-//         <div className="w-full md:w-4/12 p-8 text-left md:text-left md:flex md:justify-start">
+//         {/* Company Details - add border-l to create vertical line */}
+//         <div className="w-full md:w-4/12 p-8 text-left md:text-center flex flex-col items-center justify-start border-l border-gray-300">
 //           <div>
 //             <h3 className="font-bold text-lg">JGruppen AB</h3>
 //             <p className="mt-4">
@@ -25,35 +33,25 @@
 //           </div>
 //         </div>
 
-//         {/* Quick Links */}
-//         <div className="w-full md:w-4/12 p-8 text-left md:flex md:justify-start">
+//         {/* Quick Links - add border-l to create vertical line */}
+//         <div className="w-full md:w-4/12 p-8 text-left flex flex-col items-center justify-start border-l border-gray-300">
 //           <div>
 //             <h3 className="font-bold text-lg">Snabba länkar</h3>
 //             <ul className="flex flex-col space-y-2 mt-4">
-//               <li>
-//                 <Link href="/hem">Hem</Link>
-//               </li>
-//               <li>
-//                 <Link href="/tjanster">Tjänster</Link>
-//               </li>
-//               <li>
-//                 <Link href="/installationer">Installationer</Link>
-//               </li>
-//               <li>
-//                 <Link href="/underhall">Underhåll</Link>
-//               </li>
-//               <li>
-//                 <Link href="/produkter">Produkter</Link>
-//               </li>
-//               <li>
-//                 <Link href="/om-oss">Om oss</Link>
-//               </li>
-//               <li>
-//                 <Link href="/kontakt">Kontakt</Link>
-//               </li>
-//               <li>
-//                 <Link href="/jobba-med-oss">Jobba med oss</Link>
-//               </li>
+//               {[
+//                 { href: "/", label: "Hem" },
+//                 { href: "#", label: "Tjänster" },
+//                 { href: "/installationer", label: "Installationer" },
+//                 { href: "/underhall", label: "Underhåll" },
+//                 { href: "/produkter", label: "Produkter" },
+//                 { href: "/om-oss", label: "Om oss" },
+//                 { href: "/kontakt", label: "Kontakt" },
+//                 { href: "/jobba-med-oss", label: "Jobba med oss" },
+//               ].map((item) => (
+//                 <li key={item.href}>
+//                   <Link href={item.href}>{item.label}</Link>
+//                 </li>
+//               ))}
 //             </ul>
 //           </div>
 //         </div>
@@ -68,9 +66,15 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-gray-100 px-5 py-8">
+      <div className="flex justify-center">
+        <h4 className="py-4 w-full mx-auto text-center">
+          casino svenska | bästa casino online | svenska nätcasino
+        </h4>
+      </div>
+
       <div className="mx-auto flex flex-col md:flex-row gap-8 justify-evenly px-4 md:px-8">
         {/* Logo Section */}
-        <div className="w-full md:w-4/12 flex md:justify-center justify-start p-8">
+        <div className="w-full md:w-4/12  sm:border-b-0 border-b-2 flex flex-col md:items-center items-start justify-start p-8">
           <img
             src="/img/jgruppen-logo-skugga.png"
             alt="JGruppen"
@@ -79,7 +83,7 @@ const Footer = () => {
         </div>
 
         {/* Company Details */}
-        <div className="w-full md:w-4/12 p-8 text-left md:text-center md:flex md:justify-start">
+        <div className="w-full md:w-4/12 p-8 text-left  sm:border-b-0 border-b-2 md:text-center flex flex-col md:items-center items-start justify-start md:border-l border-gray-300 ">
           <div>
             <h3 className="font-bold text-lg">JGruppen AB</h3>
             <p className="mt-4">
@@ -91,13 +95,13 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="w-full md:w-4/12 p-8 text-left md:flex md:justify-start">
+        <div className="w-full md:w-4/12 p-8 text-left flex flex-col md:items-center items-start  justify-start md:border-l border-gray-300 ">
           <div>
             <h3 className="font-bold text-lg">Snabba länkar</h3>
             <ul className="flex flex-col space-y-2 mt-4">
               {[
-                { href: "/hem", label: "Hem" },
-                { href: "/tjanster", label: "Tjänster" },
+                { href: "/", label: "Hem" },
+                { href: "#", label: "Tjänster" },
                 { href: "/installationer", label: "Installationer" },
                 { href: "/underhall", label: "Underhåll" },
                 { href: "/produkter", label: "Produkter" },
