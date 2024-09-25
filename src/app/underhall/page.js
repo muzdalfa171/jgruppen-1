@@ -3,64 +3,57 @@ import Image from "next/image"; // Imported correctly
 
 const Underhall = () => {
   return (
-    <>
-      <section className="pt-40">
-        {/* First Section - Installationer */}
-        <section className="xl:px-96 mx-auto  md:px-24 py-12">
-          {/* Grid Layout for Two Columns */}
-          <div className="grid grid-cols-1 p-6 md:p-12 md:grid-cols-2 gap-8">
-            {/* Left Column */}
-            <div className="border-8 absolute top-[12rem] overflow-hidden left-[1.5rem] md:left-[3.5rem] xl:left-[22rem] border-[#4a536e] w-[20rem] h-60 md:w-[25rem] pl-4"></div>
-            {/* Grid Layout for Two Columns */}
-            <div className="relative px-6 top-8 z-40 bg-white space-y-6">
-              <h2 className="text-3xl font-bold text-[#4a536e] mb-6">
-                <span className="text-5xl">Service och underhåll</span>
-              </h2>
+  
+    <div className="pt-40 container w-full mx-auto">
+      {/* First Section - Installationer */}
+      <section className="flex md:flex-row flex-col p-6 py-12 px-14">
+       
+      <div className=" bg-white md:w-6/12 py-[3rem] relative ">
 
-              <p className="text-md font-bold mb-6 text-gray-700">
-                Allmänt erkänt som ett av landets ledande företag inom sin
-                bransch, har JGruppen vuxit fram och blivit regionens första val
-                för industriell installation, service, underhåll och reparation.
-                En flexibel organisation med väl strukturerade processer och
-                tydliga rutiner som möjliggör oss för att ta fullt ansvar av
-                kortsiktiga service uppdrag såväl som långsiktiga
-                underhållsprojekt.
-              </p>
+            <div className="absolute md:h-[16rem] -top-3 -left-8
+              h-[13rem] md:w-[17rem] w-[15rem] border-[6px] border-[#4a536e] z-10"></div>
 
-              <p className="text-md text-gray-700">
-                Vi har en väl utbyggd serviceverksamhet där vi under årens lopp
-                byggt upp stor kunskap kring pallkranar och miniloadkranar,
-                conveyorsystem, robotar och produktionsautomation.
-              </p>
-            </div>
-
-            {/* Right Column */}
-            <div className="space-y-8">
-              <p className="text-md pt-12 text-gray-700">
-                Vi är en flexibel organisation med välstrukturerade processer
-                som tillåter oss att ta fullt ansvar vid både enstaka
-                servicekontrakt likväl som vid långa underhållsprojekt. Vi utför
-                alla jobb från planering och projektering till mekanisk
-                montering och elektrisk installation.
-              </p>
-
-              <h3 className="text-xl font-bold text-[#4a536e]">
-                Vi erbjuder er helt enkelt en helhetslösning.
-              </h3>
+            <div className="relative bg-white z-20 px-5">
+              <div className=" flex flex-col">
+                <h2 className="text-3xl font-bold text-[#4a536e]">
+                Service och underhåll
+                </h2>
+                <p className="mt-4 text-md text-gray-700 font-semibold">
+                Allmänt erkänt som ett av landets ledande företag inom sin bransch, har JGruppen vuxit fram och blivit regionens första val för industriell installation, service, underhåll och reparation. En flexibel organisation med väl strukturerade processer och tydliga rutiner som möjliggör oss för att ta fullt ansvar av kortsiktiga service uppdrag såväl som långsiktiga underhållsprojekt.
+                </p>
+                <p className="mt-4 text-md text-gray-700">
+                Vi har en väl utbyggd serviceverksamhet där vi under årens lopp byggt upp stor kunskap kring pallkranar och miniloadkranar, conveyorsystem, robotar och produktionsautomation.
+                </p>
+              </div>
             </div>
           </div>
-        </section>
-        <div>
-          <Image
-            src="/img/etienne-girardet-sgYamIzhAhg-unsplash.jpg"
-            width={1000}
-            height={1000}
-            alt="Tillverkning och försäljning"
-            className="h-[30rem] w-full bg-cover"
-          />
-        </div>
+
+          <div className=" bg-white py-[3rem] md:w-6/12">
+            <div className=" flex flex-col px-8">
+              <p className="text-md text-gray-700">
+              Vi är en flexibel organisation med välstrukturerade processer som tillåter oss att ta fullt ansvar vid både enstaka servicekontrakt likväl som vid långa underhållsprojekt. Vi utför alla jobb från planering och projektering till mekanisk montering och elektrisk installation.
+              </p>
+
+              <h3 className="md:text-xl text-md py-4 font-bold text-[#4a536e]">
+              Vi erbjuder er helt enkelt en helhetslösning.
+              </h3>
+
+             
+            </div>
+          </div>
+       
       </section>
-    </>
+
+      <div>
+        <Image
+          src="/img/etienne-girardet-sgYamIzhAhg-unsplash.jpg"
+          width={1000}
+          height={1000}
+          alt="Tillverkning och försäljning"
+          className="h-[30rem] w-full bg-cover"
+        />
+      </div>
+    </div>
   );
 };
 

@@ -2,12 +2,13 @@ import React from "react";
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="py-36">
-        <form className=" bg-[#81828531] px-44 pt-6 pb-8 mb-4">
-          <div className="mb-4">
-         
-         <p className="text-center text-[#636466] text-2xl font-bold  p-8 ">KONTAKT</p>
+    <div className="md:px-10 py-20 p-8 container w-full mx-auto">
+      <div className="">
+        <form className=" bg-[#81828531] px-4 md:px-32 w-full pt-6 pb-8 mb-4">
+          <p className="text-center text-[#636466] text-2xl font-bold py-3 lg:p-8 ">
+            KONTAKT
+          </p>
+          <div className="mb-4 ">
             <input
               className=" hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="company"
@@ -16,7 +17,6 @@ const ContactPage = () => {
             />
           </div>
           <div className="mb-4">
-            
             <input
               className=" hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
@@ -26,7 +26,6 @@ const ContactPage = () => {
             />
           </div>
           <div className="mb-4">
-           
             <input
               className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
@@ -36,7 +35,6 @@ const ContactPage = () => {
             />
           </div>
           <div className="mb-4">
-           
             <input
               className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="phone"
@@ -45,7 +43,6 @@ const ContactPage = () => {
             />
           </div>
           <div className="mb-4">
-           
             <input
               className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="address"
@@ -54,7 +51,6 @@ const ContactPage = () => {
             />
           </div>
           <div className="mb-4">
-            
             <input
               className=" hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="subject"
@@ -63,7 +59,6 @@ const ContactPage = () => {
             />
           </div>
           <div className="mb-6">
-            
             <textarea
               className=" hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="message"
@@ -74,7 +69,7 @@ const ContactPage = () => {
           </div>
           <div className="flex py-8 items-center justify-between">
             <button
-              className="bg-[#4a536e] hover:bg-[#636466] text-white font-bold py-3 px-52 rounded focus:outline-none focus:shadow-outline"
+              className="bg-[#4a536e] hover:bg-[#636466] text-white font-bold py-3 mx-auto w-full  rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Skicka
