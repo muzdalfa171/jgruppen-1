@@ -6,13 +6,13 @@ const Underhall = () => {
     <div className="pt-40 container w-full mx-auto">
       {/* First Section - Installationer */}
       <section className="flex md:flex-row flex-col p-6 py-12 px-14">
-        <div className=" bg-white md:w-6/12 py-[3rem] relative ">
+        <div className=" bg-white w-full md:w-6/12 py-[3rem] relative ">
           <div
             className="absolute md:h-[16rem] -top-3 -left-8
               h-[13rem] md:w-[17rem] w-[15rem] border-[6px] border-[#4a536e] z-10"
           ></div>
 
-          <div className="relative bg-white z-20 px-5">
+          <div className="relative bg-white z-20 px-2">
             <div className=" flex flex-col">
               <h2 className="text-3xl font-bold text-[#4a536e]">
                 Service och underhåll
@@ -35,8 +35,8 @@ const Underhall = () => {
           </div>
         </div>
 
-        <div className=" bg-white py-[3rem] md:w-6/12">
-          <div className=" flex flex-col px-8">
+        <div className=" bg-white py-[3rem] w-full md:w-6/12">
+          <div className=" flex flex-col md:px-8">
             <p className="text-md text-gray-700">
               Vi är en flexibel organisation med välstrukturerade processer som
               tillåter oss att ta fullt ansvar vid både enstaka servicekontrakt

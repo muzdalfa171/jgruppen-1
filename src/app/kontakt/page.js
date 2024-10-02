@@ -61,11 +61,11 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="md:px-52 py-20 p-8 container w-full mx-auto">
+    <div className="lg:px-52 py-20 lg:mt-7 p-8 container w-full mx-auto">
       <div className="">
         <form
           onSubmit={handleSubmit}
-          className="bg-[#81828531] px-4 md:px-32 w-full pt-6 pb-8 mb-4"
+          className="bg-[#81828531] px-4 lg:px-32 w-full pt-6 pb-8 mb-4"
         >
           <p className="text-center text-[#636466] text-2xl font-bold py-3 lg:p-8 ">
             KONTAKT

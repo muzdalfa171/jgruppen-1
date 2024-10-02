@@ -261,9 +261,9 @@ export default function Home() {
        
         <section className="gap-8 w-full">
           <div className="bg-[url('/img/3.png')] py-16 flex justify-end bg-cover bg-center w-full">
-            <div className="flex flex-col md:flex-row md:justify-end justify-center w-[50rem] items-center sm:space-y-0  space-y-8  md:max-w-[66rem] text-white py-6">
+            <div className="flex flex-col md:flex-row md:justify-end justify-center mr-16 w-[65rem] items-center sm:space-y-0  space-y-8  md:max-w-[66rem] text-white py-6">
               {/* Left Column - Heading */}
-              <div className="flex flex-col text-3xl items-center bg-[#4a5166] p-[2rem] justify-center md:justify-start w-full md:w-1/3">
+              <div className="flex flex-col text-3xl items-center text-center bg-[#4a5166] p-[2rem] justify-center md:justify-start w-full md:w-1/3">
                 <p>JGruppen - en framgångssaga</p>
                 <div className="border-t-4 border-t-white  my-4 w-full"></div>
               </div>
