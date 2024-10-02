@@ -6,12 +6,14 @@ const Installationer = () => {
   return (
     <div className="pt-40 container w-full mx-auto">
       {/* First Section - Installationer */}
-      <section className="flex md:flex-row flex-col p-6 py-12 px-14">
+      <section className="flex md:flex-row flex-col  p-12">
        
-      <div className=" bg-white md:w-6/12 py-[3rem] relative ">
+      <div className=" bg-white md:w-6/12 px-2 py-[3rem] relative ">
 
             <div className="absolute md:h-[16rem] -top-3 -left-8
-              h-[13rem] md:w-[17rem] w-[15rem] border-[6px] border-[#4a536e] z-10"></div>
+              h-[13rem] md:w-[17rem] w-[15rem] border-[6px] border-[#4a536e] z-10">
+
+              </div>
 
             <div className="relative bg-white z-20 px-5">
               <div className=" flex flex-col">
@@ -110,6 +112,7 @@ const Installationer = () => {
       </section>
 
       {/* Third Section */}
+      <section className="px-12 w-full" >
       <div className="grid grid-cols-1 my-12 md:grid-cols-2 gap-8 py-12">
         {/* Image on the Left */}
         <div className="flex justify-center order-2 md:order-1">
@@ -146,6 +149,7 @@ const Installationer = () => {
           </ul>
         </div>
       </div>
+      </section>
     </div>
   );
 };

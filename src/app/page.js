@@ -131,7 +131,7 @@ export default function Home() {
                         började också öka sina åtaganden utanför Sverige.
                       </p>
                     </div>
-                    <button className="mt-6 px-[5rem] ml-[3.3rem] py-2 border border-gray-600 text-gray-600 font-semibold object-center hover:bg-gray-100 transition duration-300">
+                    <button className=" px-[5rem] ml-[3.3rem] py-2 border border-gray-600 text-gray-600 font-semibold object-center hover:bg-[#4a536e] hover:text-white transition duration-300">
                       Läs mer
                     </button>
                   </div>
@@ -258,45 +258,18 @@ export default function Home() {
         </>
         {/* Categories Section */}
 
-        {/* <section className="flex  md:flex-row flex-col-1  gap-8 w-full ">
-          <div className="bg-[url('/img/3.png')] py-16 flex justify-center bg-cover bg-center w-full">
-            <div className="flex flex-col md:flex-row justify-end items-center max-w-[55rem]">
-
-              <div className="flex flex-col md:flex-row text-sm md:text-base bg-[#4a5166] text-white p-6">
-                <p className="w-full md:w-1/2 flex flex-col text-3xl items-center justify-center md:justify-start">
-                  JGruppen - en framgångssaga
-                </p>
-
-                <div className="border-t-white border-t-4 my-4 w-full"></div>
-              </div>
-
-           
-              <div className="w-full md:w-1/2 text-left pl-10 text-white">
-                <p className="w-full">
-                  JGruppen har sitt huvudkontor i Motala och antalet anställda
-                  är drygt 70 personer. En filial har öppnats i Oslo, Norge, och
-                  även om positionen på den svenska hemmamarknaden är fortsatt
-                  stark så baseras idag drygt 70% av omsättningen på uppdrag
-                  inom exportmarknaderna, i Finland, Danmark, Norge,
-                  Storbritannien, Spanien och Tyskland. Företaget är särskilt
-                  stolt över det faktum att alla medarbetare har den utbildning
-                  och behörighet som krävs för att uppfylla kundernas höga krav.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section> */}
+       
         <section className="gap-8 w-full">
           <div className="bg-[url('/img/3.png')] py-16 flex justify-end bg-cover bg-center w-full">
             <div className="flex flex-col md:flex-row md:justify-end justify-center w-[50rem] items-center sm:space-y-0  space-y-8  md:max-w-[66rem] text-white py-6">
               {/* Left Column - Heading */}
-              <div className="flex flex-col text-3xl items-center bg-[#4a5166] p-[4rem] justify-center md:justify-start w-full md:w-1/3">
+              <div className="flex flex-col text-3xl items-center bg-[#4a5166] p-[2rem] justify-center md:justify-start w-full md:w-1/3">
                 <p>JGruppen - en framgångssaga</p>
-                <div className="border-t border-t-white my-4 w-full"></div>
+                <div className="border-t-4 border-t-white  my-4 w-full"></div>
               </div>
 
               {/* Right Column - Paragraph */}
-              <div className="w-full md:w-1/2 text-left pl-10">
+              <div className="w-full md:w-1/2 text-center px-8 ">
                 <p>
                   JGruppen har sitt huvudkontor i Motala och antalet anställda
                   är drygt 70 personer. En filial har öppnats i Oslo, Norge, och

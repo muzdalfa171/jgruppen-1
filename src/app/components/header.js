@@ -11,24 +11,23 @@
 
 //   // Handle scroll behavior only on the homepage
 //   useEffect(() => {
+//     const handleScroll = () => {
+//       if (pathname === "/" && window.scrollY > 50) {
+//         setIsScrolled(true);
+//       } else if (pathname === "/" && window.scrollY <= 50) {
+//         setIsScrolled(false);
+//       }
+//     };
+
+//     // Listen to scroll events only on the homepage
 //     if (pathname === "/") {
-//       const handleScroll = () => {
-//         if (window.scrollY > 50) {
-//           setIsScrolled(true);
-//         } else {
-//           setIsScrolled(false);
-//         }
-//       };
-
 //       window.addEventListener("scroll", handleScroll);
-
-//       // Cleanup scroll event listener on component unmount
-//       return () => {
-//         window.removeEventListener("scroll", handleScroll);
-//       };
-//     } else {
-//       setIsScrolled(true); // On other pages, always show the white background
 //     }
+
+//     // Cleanup scroll event listener on component unmount or when pathname changes
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
 //   }, [pathname]);
 
 //   const handleMenuClick = () => {
@@ -41,7 +40,6 @@
 
 //   const links = [
 //     { href: "/", label: "Hem" },
-//     { href: "#", label: "Tjänster" },
 //     { href: "/installationer", label: "Installationer" },
 //     { href: "/underhall", label: "Underhåll" },
 //     { href: "/produkter", label: "Produkter" },
@@ -53,22 +51,22 @@
 //   return (
 //     <header
 //       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-//         pathname === "/" && !isScrolled ? "bg-transparent" : "bg-white shadow-md"
+//         pathname === "/" && !isScrolled ? "bg-transparent" : "bg-[#f0f1f5] shadow-md"
 //       }`}
 //     >
-//       <div className="container lg:px-12  py-6 flex justify-evenly items-center">
+//       <div className="lg:px-12 px-10 py-4 flex justify-between items-center">
 //         {/* Logo */}
 //         <div className="flex">
 //           <img
 //             src="/img/jgruppen-logo-skugga.png"
 //             alt="JGruppen Logo"
-//             className="lg:h-14 w-auto h-10"
+//             className="lg:h-12 w-auto h-8"
 //           />
 //         </div>
 
 //         {/* Desktop Navbar */}
 //         <nav
-//           className={`hidden lg:flex space-x-6 text-xl font-bold ${
+//           className={`hidden lg:flex gap-4 lg:text-[0.95rem]  font-bold ${
 //             pathname === "/" && !isScrolled ? "text-white" : "text-[#4A536E]"
 //           }`}
 //         >
@@ -76,7 +74,7 @@
 //             <Link key={link.href} href={link.href}>
 //               <span
 //                 className={`hover:overline decoration-4 cursor-pointer ${
-//                   pathname === link.href ? "underline decoration-4" : ""
+//                   pathname === link.href ? "overline decoration-4" : ""
 //                 }`}
 //               >
 //                 {link.label}
@@ -108,11 +106,11 @@
 
 //       {/* Mobile Navbar */}
 //       {menuOpen && (
-//         <nav className="lg:hidden flex flex-col bg-[#818285] text-white space-y-4 py-6 px-4 absolute w-full left-0 top-22">
+//         <nav className="lg:hidden flex flex-col bg-[#818285] text-white space-y-4 py-6 px-6 absolute w-full left-0 top-19">
 //           {links.map((link) => (
 //             <Link key={link.href} href={link.href}>
 //               <span
-//                 className="hover:overline decoration-4 cursor-pointer "
+//                 className="hover:overline decoration-4 cursor-pointer"
 //                 onClick={closeMobileMenu}
 //               >
 //                 {link.label}
@@ -133,7 +131,7 @@ import { usePathname } from "next/navigation"; // `usePathname` to detect the cu
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname(); // Get the current path
+  const pathname = typeof window !== 'undefined' ? usePathname() : ''; // Only use usePathname on client-side
 
   // Handle scroll behavior only on the homepage
   useEffect(() => {
@@ -145,12 +143,11 @@ export default function Header() {
       }
     };
 
-    // Listen to scroll events only on the homepage
     if (pathname === "/") {
       window.addEventListener("scroll", handleScroll);
     }
 
-    // Cleanup scroll event listener on component unmount or when pathname changes
+    // Cleanup scroll event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -166,7 +163,6 @@ export default function Header() {
 
   const links = [
     { href: "/", label: "Hem" },
-    { href: "#", label: "Tjänster" },
     { href: "/installationer", label: "Installationer" },
     { href: "/underhall", label: "Underhåll" },
     { href: "/produkter", label: "Produkter" },
@@ -175,10 +171,12 @@ export default function Header() {
     { href: "/jobba-med-oss", label: "Jobba med oss" },
   ];
 
+  const menuButtonColor = pathname === "/" && !isScrolled ? "text-white" : "text-[#4A536E]";
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        pathname === "/" && !isScrolled ? "bg-transparent" : "bg-white shadow-md"
+        pathname === "/" && !isScrolled ? "bg-transparent" : "bg-[#f0f1f5] shadow-md"
       }`}
     >
       <div className="lg:px-12 px-10 py-4 flex justify-between items-center">
@@ -186,14 +184,14 @@ export default function Header() {
         <div className="flex">
           <img
             src="/img/jgruppen-logo-skugga.png"
-            alt="JGruppen Logo"
-            className="lg:h-10 w-auto h-8"
+            alt="JGruppen Company Logo"
+            className="lg:h-12 w-auto h-8"
           />
         </div>
 
         {/* Desktop Navbar */}
         <nav
-          className={`hidden lg:flex gap-4 lg:text-[0.75rem]  font-bold ${
+          className={`hidden lg:flex gap-4 lg:text-[0.95rem] font-bold ${
             pathname === "/" && !isScrolled ? "text-white" : "text-[#4A536E]"
           }`}
         >
@@ -201,7 +199,7 @@ export default function Header() {
             <Link key={link.href} href={link.href}>
               <span
                 className={`hover:overline decoration-4 cursor-pointer ${
-                  pathname === link.href ? "underline decoration-4" : ""
+                  pathname === link.href ? "overline decoration-4" : ""
                 }`}
               >
                 {link.label}
@@ -217,9 +215,7 @@ export default function Header() {
             height="24"
             fill="none"
             stroke="currentColor"
-            className={`w-6 h-6 ${
-              pathname === "/" && !isScrolled ? "text-white" : "text-[#4A536E]"
-            }`}
+            className={`w-6 h-6 ${menuButtonColor}`}
           >
             <path
               strokeLinecap="round"
@@ -233,7 +229,7 @@ export default function Header() {
 
       {/* Mobile Navbar */}
       {menuOpen && (
-        <nav className="lg:hidden flex flex-col bg-[#818285] text-white space-y-4 py-6 px-6 absolute w-full left-0 top-19">
+        <nav className="lg:hidden flex flex-col bg-[#818285] text-white space-y-4 py-6 px-6 absolute w-full left-0 top-[19px]">
           {links.map((link) => (
             <Link key={link.href} href={link.href}>
               <span
