@@ -1,0 +1,4 @@
+
+User-agent: *
+Disallow:
+Sitemap: https://www.jgruppen.se/sitemap.xml

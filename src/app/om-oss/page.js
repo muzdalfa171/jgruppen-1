@@ -7,7 +7,7 @@ const Omoss = () => {
       {/* Introduction Section */}
       <div className="text-center py-10">
         <h1 className="text-4xl font-bold mb-6">Framgångssaga</h1>
-        <p className="text-lg text-gray-700 mx-auto w-11/12 md:w-10/12">
+        <p className="text-lg text-gray-700 mx-auto w-8/12 md:w-9/12">
           Som fristående och engagerad extern entreprenör fick JCon allt fler
           uppdrag inom olika projekt åt stora internationella systembyggare och
           integrationsspecialister med hög kompetens. Tack vare sitt rykte för
@@ -21,7 +21,7 @@ const Omoss = () => {
       
         <div className="w-full bg-[#f0f1f5] px-6 md:px-24 py-12">
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-row xl:grid-cols-2 gap-8 items-center">
               {/* Text Content */}
               <div>
                 <h2 className="text-3xl font-bold text-[#4a536e] mb-4">
