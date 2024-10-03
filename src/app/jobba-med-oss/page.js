@@ -4,11 +4,25 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../lib/firebase";
+import Head from "next/head";
 
 
 const JobCard = ({ job }) => {
   return (
     <div className="w-[20rem] rounded shadow-lg py-4 bg-white ">
+      <Head>
+        <title>Jobba med oss - JGruppen</title>
+        <link
+          rel="canonical"
+          href="https://jgruppen.se/jobba-med-oss"
+          key="canonical"
+        />
+          <meta
+          name="description"
+          content="Join JGruppen for exciting job opportunities in material handling, integration, and installation services."
+        />
+        <meta name="keywords" content="job, employment, JGruppen, careers" />
+      </Head>
       {/* Company Logo */}
       <div className="flex justify-center p-8">
         <img

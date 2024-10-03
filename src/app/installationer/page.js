@@ -1,10 +1,27 @@
 "use client";
+import Head   from "next/head";
 import React from "react";
 import Image from "next/image";
 
 const Installationer = () => {
   return (
     <div className="pt-40 container w-full mx-auto">
+      
+         {/* Add canonical tag and page title */}
+         <Head>
+        <title>Installationer - JGruppen</title>
+        <link
+          rel="canonical"
+          href="https://jgruppen.se/installationer"
+          key="canonical"
+        />
+          <meta
+          name="description"
+          content="JGruppen specializes in installation and integration of material handling systems for industrial clients across Europe."
+        />
+        <meta name="keywords" content="installation, material handling, integration, JGruppen" />
+    
+      </Head>
       {/* First Section - Installationer */}
       <section className="flex md:flex-row flex-col p-12">
         <div className=" bg-white md:w-6/12 w-full py-[3rem] relative ">

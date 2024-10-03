@@ -29,16 +29,29 @@ body {
      text-wrap: balance; 
   } */
 }
-@keyframes fadeIn {
-  from {
+@keyframes slideIn {
+  0% {
     opacity: 0;
+    transform: translateY(20px);
   }
-  to {
+  100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 0.5s ease-in;
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.animate-slideInOut {
+  animation: slideIn 0.5s ease-out forwards, slideOut 0.5s ease-in 2.5s forwards;
 }
 
