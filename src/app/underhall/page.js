@@ -1,9 +1,25 @@
 import React from "react";
 import Image from "next/image"; // Imported correctly
-
+import Head from "next/head";
 const Underhall = () => {
   return (
     <div className="pt-40 container w-full mx-auto">
+      <Head>
+        <title>Underhåll - JGruppen</title>
+        <link
+          rel="canonical"
+          href="https://jgruppen.se/underhall" // Canonical URL for the page
+          key="canonical"
+        />
+        <meta
+          name="description"
+          content="JGruppen offers expert maintenance and support services for material handling systems to ensure smooth operation and efficiency."
+        />
+        <meta
+          name="keywords"
+          content="underhåll, maintenance, JGruppen, material handling, support services"
+        />
+      </Head>
       {/* First Section - Installationer */}
       <section className="flex md:flex-row flex-col p-6 py-12 px-14">
         <div className=" bg-white w-full md:w-6/12 py-[3rem] relative ">
@@ -52,13 +68,13 @@ const Underhall = () => {
         </div>
       </section>
 
-      <div className="mx-auto">
+      <div className="w-full mx-auto">
         <Image
           src="/img/category3.jpg"
-          width={1000}
-          height={1000}
+          width={5000}
+          height={5000}
           alt="Tillverkning och försäljning"
-          className="w-full h-[35rem] object-cover"
+          className="w-full lg:h-[35rem] object-cover"
         />
       </div>
     </div>
