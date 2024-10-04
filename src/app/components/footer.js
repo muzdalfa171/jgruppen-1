@@ -12,14 +12,14 @@ import { FaWhatsapp } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 px-5 py-8">
-      <div className="flex md:flex-row flex-col gap-2 justify-around md:px-8">
+    <footer className="bg-gray-100  lg:py-8">
+      <div className="flex md:flex-row flex-col justify-around ">
         {/* Logo Section */}
-        <div className="w-full  flex flex-col md:items-center items-start justify-start p-8">
+        <div className="w-full flex flex-col md:items-center items-start p-8">
           <img
             src="/img/jgruppen-logo-skugga.png"
             alt="JGruppen"
-            className="xl:h-10 h-12 md:w-50 w-[12rem]"
+            className="xl:h-10 h-12  w-[12rem]"
           />
 
           {/* Social Media Icons */}
@@ -70,6 +70,11 @@ const Footer = () => {
             </Link>
           </div>
         </div>
+
+
+
+
+
         {/* Company Details */}
         <div className="w-full p-8 md:border-l  border-gray-300 md:text-md text-sm flex items-start lg:justify-center lg:text-center flex-col lg:ps-28">
           <h3 className="font-bold text-lg">JGruppen AB</h3>
@@ -119,6 +124,11 @@ const Footer = () => {
           </div>
         </div>
 
+
+
+
+
+
         {/* Quick Links */}
         <div className="w-full p-8 text-sm text-left md:border-l   flex items-start md:justify-center lg:border-gray-300">
           <div>
@@ -143,6 +153,9 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
+
+
       </div>
     </footer>
   );

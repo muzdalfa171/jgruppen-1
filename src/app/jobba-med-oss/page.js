@@ -9,8 +9,8 @@ import Head from "next/head";
 
 const JobCard = ({ job }) => {
   return (
-    <div className="w-[20rem] rounded shadow-lg py-4 bg-white ">
-      <Head>
+    <div className="w-[20rem] rounded shadow-lg py-5 my-10 bg-white ">
+      <Head> 
         <title>Jobba med oss - JGruppen</title>
         <link
           rel="canonical"
@@ -102,16 +102,16 @@ const JobList = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="flex items-center justify-center">
         <p className="text-lg text-red-500">{error}</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen py-40 bg-gray-100 flex items-center justify-center">
-      <div className="bg-gray-300 rounded-lg p-8 shadow-lg w-[95%] ">
-        <h1 className="text-4xl font-bold text-center mb-8">Job Openings</h1>
+    <div className="my-10 md:py-20 py-10 bg-gray-100 flex items-center justify-center">
+      <div className="bg-gray-300 rounded-lg px-8 shadow-lg w-[95%] ">
+        <h1 className="text-4xl font-bold text-center mt-8">Job Openings</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {jobs.length > 0 ? (
             jobs.map((job) => <JobCard key={job.id} job={job} />)

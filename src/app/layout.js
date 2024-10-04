@@ -2,6 +2,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 
 // Custom font import (local fonts)
 const geistSans = localFont({
@@ -33,6 +35,9 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+         {/* Google Analytics Component */}
+         <GoogleAnalytics gaId="G-RRFG0KW6HD" /> {/* Replace G-XYZ with your actual GA4 Measurement ID */}
+      
       </body>
     </html>
   );
