@@ -55,7 +55,6 @@ export default function Header() {
     { href: "/om-oss", label: "Om oss" },
     { href: "/kontakt", label: "Kontakt" },
     { href: "/jobba-med-oss", label: "Jobba med oss" },
-
   ];
 
   const menuButtonColor = pathname === "/" && !isScrolled ? "text-white" : "text-[#4A536E]";
@@ -89,7 +88,7 @@ export default function Header() {
 
         {/* Desktop Navbar */}
         <nav
-          className={`hidden lg:flex gap-3 xl:gap-4 text-[0.85rem] xl:text-[0.95rem] font-bold ${
+          className={`hidden lg:flex gap-6 xl:gap-8 text-[0.85rem] xl:text-[0.95rem] font-bold ${
             pathname === "/" && !isScrolled ? "text-white" : "text-[#4A536E]"
           }`}
         >
@@ -136,7 +135,7 @@ export default function Header() {
             <Link 
               key={link.href} 
               href={link.href}
-              className="py-2 sm:py-3"
+              className="py-3 sm:py-4 border-b border-gray-600 last:border-b-0"
             >
               <span
                 className="hover:overline decoration-4 cursor-pointer text-sm sm:text-base"
