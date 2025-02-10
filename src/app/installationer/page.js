@@ -1,5 +1,5 @@
 "use client";
-import Head   from "next/head";
+import Head from "next/head";
 import React from "react";
 import Image from "next/image";
 
@@ -36,22 +36,10 @@ const Installationer = () => {
                 Installationer
               </h2>
               <p className="mt-4 text-md text-gray-700 font-semibold">
-                Att JGruppen drivs och förverkligar ett växande antal
-                referensprojekt både i Norden och i resten av Europa, för stora
-                och internationellt välkända kunder, är ett överordnat bevis på
-                JGruppens status som världsledande leverantör av produkter,
-                tjänster och lösningar inom projekt med installation,
-                integration av materialhanteringssystem.
+                JGruppen driver och genomför ett växande antal referensprojekt, både i Norden och övriga Europa, för stora och internationellt välkända kunder. Detta är ett tydligt bevis på JGruppens status som en världsledande leverantör av produkter, tjänster och lösningar inom projekt som omfattar installation och integration av materialhanteringssystem.
               </p>
               <p className="mt-4 text-md text-gray-700">
-                Företagets grundare och VD Christopher Jarl hänvisar till flera
-                olika faktorer som förklaring till företagets framgångar som
-                uppskattad och central partner till så många kunder: ”Det är
-                inte bara jag som känner stort engagemang för varje uppdrag vi
-                får, utan det gäller alla våra medarbetare”, säger han.
-                ”Personalen är utan diskussion en ovärderlig tillgång. Våra
-                anställda har hög kompetens och vill absolut erbjuda bästa
-                möjliga service, oavsett tid och plats.
+                Företagets grundare och VD, Christopher Jarl, lyfter fram flera faktorer bakom företagets framgång som en uppskattad och central partner för så många kunder. 'Det är inte bara jag som känner ett starkt engagemang för varje uppdrag vi får – det gäller alla våra medarbetare,' säger han. 'Vår personal är utan tvekan en ovärderlig tillgång. De besitter hög kompetens och strävar alltid efter att leverera bästa möjliga service, oavsett tid och plats.
               </p>
             </div>
           </div>
@@ -63,7 +51,7 @@ const Installationer = () => {
               De följer alltid god industrised och tillämpar de rutiner och
               procedurer som har lagts fast i olika kvalitetsdokument. Detta
               avspeglas i noggrant dokumentationsarbete som pågår under hela
-              projekttiden.”
+              projekttiden."
             </p>
 
             <h3 className="text-xl font-bold text-[#4a536e]">
@@ -75,12 +63,12 @@ const Installationer = () => {
               installera en transportör och ett pakethanteringssystem, eller att
               integrera en fullständig automatisk bearbetningslinje, så har
               JGruppens medarbetare det elektriska, mekaniska och svetstekniska
-              kunnande som krävs för att jobbet ska bli gjort. ”Vi är stolta
+              kunnande som krävs för att jobbet ska bli gjort. "Vi är stolta
               över vårt rykte om att stå för vårt ord och genomföra våra uppdrag
-              i tid, oavsett hur många mantimmar vi måste lägga in.”
+              i tid, oavsett hur många mantimmar vi måste lägga in."
               Industriella kunder som vet att tid är pengar och kräver minimala
               driftsavbrott uppskattar vårt arbetssätt. Det väcker intresse hos
-              allt fler potentiella nya kunder”, tillägger Christopher Jarl.
+              allt fler potentiella nya kunder", tillägger Christopher Jarl.
             </p>
           </div>
         </div>
@@ -93,12 +81,10 @@ const Installationer = () => {
             {/* Text Content */}
             <div>
               <h2 className="text-3xl font-bold text-[#4a536e] mb-4">
-                Grund inom installation av materialhanterings system
+                Expertis inom installation av materialhanteringssystem
               </h2>
               <p className="text-lg font-bold w-full md:w-3/4 text-gray-700 mb-4">
-                Vi har sedan dess fortsatt fylla behovet hos våra kunder och det
-                är det som har gjort att vi kom dit vi är idag. Installationer
-                är:
+                Sedan starten har vi fortsatt att möta våra kunders behov, och det är just detta som har tagit oss dit vi är idag. Vi har lång erfarenhet av installationer inom bland annat:
               </p>
               <ul className="text-md text-gray-700 list-none space-y-2">
                 <li>– Automationskranar</li>
