@@ -106,41 +106,40 @@ const ContactPage = () => {
 
   return (
     <>
-      <div className="pt-40 container w-full mx-auto">
+      <div className="container w-full mx-auto">
         <div className="lg:px-52 py-20 lg:mt-7 p-8 container w-full mx-auto">
           <form
             onSubmit={handleSubmit}
             className="bg-[#81828531] px-4 lg:px-32 w-full pt-6 pb-8 mb-4"
           >
-            <h2 className="text-2xl font-bold text-[#4a536e] text-center py-3 lg:p-8">
+            <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-[#4a536e] text-center py-3 lg:p-8">
               Kontakt
-
             </h2>
             <div className="mb-4 relative">
               <select
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline"
+                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
                 id="business_type"
                 value={formData.business_type}
                 onChange={handleChange}
                 required
               >
-                <option className="text-base" value="" disabled>
+                <option className="text-xs xs:text-sm sm:text-base" value="" disabled>
                   Välj företagstyp
                 </option>
-                <option className="text-base" value="smallBusiness">
+                <option className="text-xs xs:text-sm sm:text-base" value="smallBusiness">
                   Litet företag
                 </option>
-                <option className="text-base" value="mediumBusiness">
+                <option className="text-xs xs:text-sm sm:text-base" value="mediumBusiness">
                   Medelstort företag
                 </option>
-                <option className="text-base" value="enterprise">
+                <option className="text-xs xs:text-sm sm:text-base" value="enterprise">
                   Stort företag
                 </option>
               </select>
             </div>
             <div className="mb-4">
               <input
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline"
+                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
                 id="name"
                 type="text"
                 placeholder="Namn*"
@@ -149,14 +148,14 @@ const ContactPage = () => {
                 required
               />
               {errors.name && (
-                <p className="text-red-500 text-base italic mt-2">
+                <p className="text-red-500 text-xs xs:text-sm sm:text-base italic mt-2">
                   {errors.name}
                 </p>
               )}
             </div>
             <div className="mb-4">
               <input
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline"
+                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
                 id="email"
                 type="email"
                 placeholder="Email*"
@@ -165,14 +164,14 @@ const ContactPage = () => {
                 required
               />
               {errors.email && (
-                <p className="text-red-500 text-base italic mt-2">
+                <p className="text-red-500 text-xs xs:text-sm sm:text-base italic mt-2">
                   {errors.email}
                 </p>
               )}
             </div>
             <div className="mb-4">
               <input
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline"
+                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
                 id="phone"
                 type="text"
                 placeholder="Telefonnummer"
@@ -182,7 +181,7 @@ const ContactPage = () => {
             </div>
             <div className="mb-4">
               <input
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline"
+                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
                 id="address"
                 type="text"
                 placeholder="Adress"
@@ -192,7 +191,7 @@ const ContactPage = () => {
             </div>
             <div className="mb-4">
               <input
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline"
+                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
                 id="subject"
                 type="text"
                 placeholder="Ämne"
@@ -203,7 +202,7 @@ const ContactPage = () => {
             <div className="mb-6">
               <div className="relative">
                 <textarea
-                  className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline resize-none"
+                  className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline resize-none text-xs xs:text-sm sm:text-base"
                   id="message"
                   placeholder="Meddelande*"
                   value={formData.message}

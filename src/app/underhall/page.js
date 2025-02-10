@@ -31,13 +31,13 @@ const Underhall = () => {
 
           <div className="relative bg-white z-20 md:px-5">
             <div className=" flex flex-col ">
-              <h2 className="text-2xl font-bold text-[#4a536e]">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e]">
                 Service och underhåll
               </h2>
-              <p className="mt-4 text-base text-gray-600 font-semibold">
+              <p className="mt-4 text-sm sm:text-base text-gray-600 font-semibold">
                 JGruppen är allmänt erkänd som ett av landets ledande företag inom sin bransch och har vuxit till att bli regionens förstahandsval för industriell installation, service, underhåll och reparation.
               </p>
-              <p className="mt-4 text-base text-gray-600">
+              <p className="mt-4 text-sm sm:text-base text-gray-600">
                 Vi är en flexibel organisation med välstrukturerade processer och tydliga rutiner, vilket gör det möjligt för oss att ta fullt ansvar för både kortsiktiga serviceuppdrag och långsiktiga underhållsprojekt.
               </p>
             </div>
@@ -46,12 +46,12 @@ const Underhall = () => {
 
         <div className=" bg-white py-[3rem] md:w-6/12 w-full">
           <div className=" flex flex-col md:px-8">
-            <p className="text-base text-gray-600">
+            <p className="text-sm sm:text-base text-gray-600">
               Vår serviceverksamhet är välutbyggd och har under årens lopp samlat omfattande kunskap om pallkranar, miniloadkranar, conveyorsystem, robotar och produktionsautomation.
               Vi tar ansvar för hela processen – från planering och projektering till mekanisk montering och elektrisk installation. Med vår expertis och erfarenhet erbjuder vi en helhetslösning anpassad efter era behov.
             </p>
 
-            <h3 className="text-2xl font-bold text-[#4a536e]">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#4a536e]">
               Vi erbjuder er helt enkelt en helhetslösning.
             </h3>
           </div>

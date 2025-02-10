@@ -29,11 +29,11 @@ const Omoss = () => {
 
           <div className="relative bg-white z-20 md:px-5">
             <div className="flex flex-col">
-              <h2 className="text-2xl font-bold text-[#4a536e]">En framgångssaga</h2>
-              <p className="mt-4 text-base text-gray-600 font-semibold">
+              <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-[#4a536e]">En framgångssaga</h2>
+              <p className="mt-4 text-xs xs:text-sm sm:text-base text-gray-600 font-semibold">
                 Som en engagerad fristående extern entreprenör fick JCon allt fler uppdrag inom olika projekt åt stora internationella systembyggare och integrationsspecialister med hög kompetens.
               </p>
-              <p className="mt-4 text-base text-gray-600">
+              <p className="mt-4 text-xs xs:text-sm sm:text-base text-gray-600">
                 Tack vare sitt rykte att kunna utföra kostnadseffektiva jobb, präglade av hög kvalitet, kompetenta yrkesmän och med leveranssäkerhet i högsätet, kunde JCon ta hem allt större uppdrag och började också öka sina åtaganden utanför Sverige.
               </p>
             </div>
@@ -42,13 +42,13 @@ const Omoss = () => {
 
         <div className="bg-white py-[3rem] md:w-6/12 w-full">
           <div className="flex flex-col md:px-8">
-            <h3 className="text-2xl font-bold text-[#4a536e]">Utveckling</h3>
-            <p className="mt-4 text-base text-gray-600">
+            <h3 className="text-lg xs:text-xl sm:text-2xl font-bold text-[#4a536e]">Utveckling</h3>
+            <p className="mt-4 text-xs xs:text-sm sm:text-base text-gray-600">
               För att bemöta aktuella krav från våra kunder, inledde Christopher Jarl en omorganisation för att skapa en ny struktur som var bättre anpassad för framtida krav på en dynamisk marknad. Detta ledde till bildandet av JGruppen AB. Sedan dess har företaget fortsatt att växa och bredda sitt utbud av produkter och tjänster. Närvaron har förstärkts på nya och befintliga exportmarknader världen över.
             </p>
 
-            <h3 className="text-2xl font-bold text-[#4a536e] mt-6">Stolthet</h3>
-            <p className="mt-4 text-base text-gray-600">
+            <h3 className="text-lg xs:text-xl sm:text-2xl font-bold text-[#4a536e] mt-6">Stolthet</h3>
+            <p className="mt-4 text-xs xs:text-sm sm:text-base text-gray-600">
               JGruppen har sitt huvudkontor i Motala, Östergötalnd. Antalet anställda är drygt 70 personer världen över. På senare tid har vi även filialer i Oslo, Norge och i GCC länderna. Även om positionen på den svenska hemmamarknaden är fortsatt stark så baseras idag drygt 70% av vår omsättning på uppdrag inom exportmarknaderna, EU, GCC, Norge, Schweiz och USA. Företaget är särskilt stolt över det faktum att alla medarbetare har den utbildning och behörighet som krävs för att uppfylla kundernas höga krav.
             </p>
           </div>

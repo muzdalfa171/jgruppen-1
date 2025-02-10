@@ -23,34 +23,34 @@ const Underhall = () => {
       </Head>
 
       {/* First Section - Installationer */}
-      <section className="flex md:flex-row flex-col p-12">
-        <div className=" bg-white md:w-6/12 w-full py-[3rem] relative ">
+      <section className="flex flex-col p-4 sm:p-8 md:p-12">
+        <div className="bg-white w-full py-[2rem] sm:py-[3rem] relative">
           <div
-            className="absolute md:h-[16rem] -top-3 -left-8
+            className="absolute md:h-[16rem] -top-3 xs:-left-8 -left-2
               h-[13rem] md:w-[17rem] w-[15rem] border-[6px] border-[#4a536e] z-10"
           ></div>
 
-          <div className="relative bg-white z-20 md:px-5">
-            <div className=" flex flex-col ">
-              <h2 className="text-2xl font-bold text-[#4a536e]">
+          <div className="relative bg-white z-20 pl-3 md:px-5">
+            <div className="flex flex-col">
+              <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-[#4a536e]">
                 Tillverkning och försäljning
               </h2>
-              <p className="mt-4 text-base text-gray-600 font-semibold">
+              <p className="mt-3 sm:mt-4 text-xs xs:text-sm sm:text-base text-gray-600 font-semibold">
                 Flexibla och reaktionssnabba partnerskap med noggrant utvalda
                 underleverantörer som JGruppens dotterbolag samarbetat med
                 under lång tid garanterar att JGruppens kunder får sina behov
                 tillgodosedda med olika typer av komponenter och material.
               </p>
-              <p className="mt-4 text-base text-gray-600">
+              <p className="mt-3 sm:mt-4 text-xs xs:text-sm sm:text-base text-gray-600">
                 Detta gäller även detaljer som är svåra att få tag på, finns i
                 begränsat antal eller har slutat tillverkas.
               </p>
-              <p className="mt-4 text-base text-gray-600">
+              <p className="mt-3 sm:mt-4 text-xs xs:text-sm sm:text-base text-gray-600">
                 Med andra ord, vi kan tillfredställa våra kunders behov av allt från perifera
                 inventarier till centrala anläggningskomponenter, såväl som
                 unika konstruktioner och specialbyggen.
               </p>
-              <p className="mt-4 text-base text-gray-600">
+              <p className="mt-3 sm:mt-4 text-xs xs:text-sm sm:text-base text-gray-600">
                 Vi har en väl utbyggd serviceverksamhet där vi under årens
                 lopp byggt upp stor kunskap kring pallkranar och
                 miniloadkranar, conveyorsystem, robotar och
@@ -68,7 +68,7 @@ const Underhall = () => {
             width={5000}
             height={5000}
             alt="Tillverkning och försäljning"
-            className="lg:h-[30rem] h-80 w-full bg-cover"
+            className="h-48 xs:h-60 sm:h-80 lg:h-[30rem] w-full object-cover"
           />
         </div>
         <div className="lg:w-6/12 w-full">
@@ -77,7 +77,7 @@ const Underhall = () => {
             width={5000}
             height={5000}
             alt="Tillverkning och försäljning"
-            className="lg:h-[30rem] w-full h-80 bg-cover"
+            className="h-48 xs:h-60 sm:h-80 lg:h-[30rem] w-full object-cover"
           />
         </div>
       </div>
