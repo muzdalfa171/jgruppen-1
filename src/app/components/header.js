@@ -1,15 +1,15 @@
-"use client"; // Add this directive for client-side rendering
+"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // `usePathname` to detect the current route
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = typeof window !== 'undefined' ? usePathname() : ''; // Only use usePathname on client-side
+  const pathname = typeof window !== 'undefined' ? usePathname() : '';
 
-  // Handle scroll behavior only on the homepage
   useEffect(() => {
     const handleScroll = () => {
       if (pathname === "/" && window.scrollY > 50) {
@@ -23,13 +23,23 @@ export default function Header() {
       window.addEventListener("scroll", handleScroll);
     }
 
-    // Cleanup scroll event listener
+    // Add click event listener to close menu when clicking outside
+    const handleClickOutside = (event) => {
+      if (menuOpen && !event.target.closest('header')) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener('click', handleClickOutside);
     };
-  }, [pathname]);
+  }, [pathname, menuOpen]);
 
-  const handleMenuClick = () => {
+  const handleMenuClick = (e) => {
+    e.stopPropagation();
     setMenuOpen(!menuOpen);
   };
 
@@ -55,26 +65,37 @@ export default function Header() {
         pathname === "/" && !isScrolled ? "bg-transparent" : "bg-[#f0f1f5] shadow-md"
       }`}
     >
-      <div className="lg:px-12 px-10 py-4 flex justify-between items-center">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex">
-          <img
-            src="/img/jgruppen-logo-skugga.png"
-            alt="JGruppen Company Logo"
-            className="lg:h-12 w-auto h-8"
-          />
+        <div className="flex-shrink-0">
+          <Link href="/">
+            <Image
+              src="/img/jgruppen-logo-skugga.png"
+              alt="JGruppen Company Logo"
+              width={192}
+              height={80}
+              className="h-6 sm:h-8 lg:h-12 w-auto"
+              quality={100}
+              priority={true}
+              style={{
+                objectFit: 'contain',
+                maxWidth: '100%',
+                height: 'auto'
+              }}
+            />
+          </Link>
         </div>
 
         {/* Desktop Navbar */}
         <nav
-          className={`hidden lg:flex gap-4 lg:text-[0.95rem] font-bold ${
+          className={`hidden lg:flex gap-3 xl:gap-4 text-[0.85rem] xl:text-[0.95rem] font-bold ${
             pathname === "/" && !isScrolled ? "text-white" : "text-[#4A536E]"
           }`}
         >
           {links.map((link) => (
             <Link key={link.href} href={link.href}>
               <span
-                className={`hover:overline decoration-4 cursor-pointer ${
+                className={`hover:overline decoration-4 cursor-pointer whitespace-nowrap ${
                   pathname === link.href ? "overline decoration-4" : ""
                 }`}
               >
@@ -85,13 +106,17 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Toggle Button */}
-        <button className="block lg:hidden" onClick={handleMenuClick}>
+        <button 
+          className="block lg:hidden p-2" 
+          onClick={handleMenuClick}
+          aria-label="Toggle menu"
+        >
           <svg
             width="24"
             height="24"
             fill="none"
             stroke="currentColor"
-            className={`w-6 h-6 ${menuButtonColor}`}
+            className={`w-5 sm:w-6 h-5 sm:h-6 ${menuButtonColor}`}
           >
             <path
               strokeLinecap="round"
@@ -105,11 +130,15 @@ export default function Header() {
 
       {/* Mobile Navbar */}
       {menuOpen && (
-        <nav className="lg:hidden flex flex-col mt-12 bg-[#818285] text-white space-y-4 py-6 px-6 absolute w-full left-0 top-[19px]">
+        <nav className="lg:hidden flex flex-col bg-[#818285] text-white py-4 sm:py-6 px-4 sm:px-6 absolute w-full left-0 top-[48px] sm:top-[60px]">
           {links.map((link) => (
-            <Link key={link.href} href={link.href}>
+            <Link 
+              key={link.href} 
+              href={link.href}
+              className="py-2 sm:py-3"
+            >
               <span
-                className="hover:overline decoration-4 cursor-pointer"
+                className="hover:overline decoration-4 cursor-pointer text-sm sm:text-base"
                 onClick={closeMobileMenu}
               >
                 {link.label}
