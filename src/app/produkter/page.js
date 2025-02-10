@@ -39,12 +39,20 @@ const Underhall = () => {
                   underleverantörer som JGruppens dotterbolag samarbetat med
                   under lång tid garanterar att JGruppens kunder får sina behov
                   tillgodosedda med olika typer av komponenter och material.
-                  Detta gäller även detaljer som är svåra att få tag på, finns i
-                  begränsat antal eller har slutat tillverkas. Med andra ord, vi
-                  kan tillfredställa våra kunders behov av allt från perifera
-                  inventarier till centrala anläggningskomponenter, såväl som
-                  unika konstruktioner och specialbyggen.{" "}
+
+                
+                
+                 
                 </p>
+                <br/>
+                <p>
+                Detta gäller även detaljer som är svåra att få tag på, finns i
+                begränsat antal eller har slutat tillverkas. 
+                </p>
+                <br />
+                <p> Med andra ord, vi kan tillfredställa våra kunders behov av allt från perifera
+                  inventarier till centrala anläggningskomponenter, såväl som
+                  unika konstruktioner och specialbyggen.{" "}</p>
                 <p className="mt-4 text-md text-gray-700">
                   Vi har en väl utbyggd serviceverksamhet där vi under årens
                   lopp byggt upp stor kunskap kring pallkranar och
@@ -55,21 +63,7 @@ const Underhall = () => {
             </div>
           </div>
 
-          <div className=" bg-white py-[3rem] w-full md:w-6/12">
-            <div className=" flex flex-col lg:px-8">
-              <p className="text-md text-gray-700">
-                Flexibla och reaktionssnabba partnerskap med noggrant utvalda
-                underleverantörer som JGruppens dotterbolag samarbetat med under
-                lång tid garanterar att JGruppens kunder får sina behov
-                tillgodosedda med olika typer av komponenter och material. Detta
-                gäller även detaljer som är svåra att få tag på, finns i
-                begränsat antal eller har slutat tillverkas. Med andra ord, vi
-                kan tillfredställa våra kunders behov av allt från perifera
-                inventarier till centrala anläggningskomponenter, såväl som
-                unika konstruktioner och specialbyggen.
-              </p>
-            </div>
-          </div>
+          
         </section>
       </div>
       <div className="flex md:flex-row w-full flex-col ">
