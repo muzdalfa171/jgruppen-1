@@ -68,8 +68,8 @@ const JobList = () => {
               <p className="text-2xl font-semibold text-gray-600">No jobs available at the moment.</p>
               <p className="mt-4 text-gray-500">Please check back later.</p> {/* Added a "check back later" message */}
               {/* Optional: Add a link to your contact page or careers page */}
-              <Link href="/contact">
-                <p className="mt-4 text-blue-500 hover:underline">Contact Us</p>
+              <Link href="/">
+                <p className="mt-4 text-blue-500 hover:underline">Back to Home</p>
               </Link>
             </div>
           )}
