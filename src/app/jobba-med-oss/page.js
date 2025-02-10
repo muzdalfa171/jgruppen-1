@@ -59,17 +59,17 @@ const JobList = () => {
   return (
     <div className="my-10 md:py-20 py-10 bg-gray-100 flex items-center justify-center">
       <div className="bg-gray-300 rounded-lg px-8 shadow-lg w-[95%] ">
-        <h1 className="text-4xl font-bold text-center mt-8">Job Openings</h1>
+        <h1 className="text-4xl font-bold text-center mt-8">Lediga jobb</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {jobs.length > 0 ? (
             jobs.map((job) => <JobCard key={job.id} job={job} />)
           ) : (
             <div className="col-span-full text-center py-10"> {/* Center the message and add padding */}
-              <p className="text-2xl font-semibold text-gray-600">No jobs available at the moment.</p>
-              <p className="mt-4 text-gray-500">Please check back later.</p> {/* Added a "check back later" message */}
+              <p className="text-2xl font-semibold text-gray-600">Inga lediga jobb för tillfället!</p>
+              <p className="mt-4 text-gray-500">Håll utkik!</p> {/* Added a "check back later" message */}
               {/* Optional: Add a link to your contact page or careers page */}
               <Link href="/">
-                <p className="mt-4 text-blue-500 hover:underline">Back to Home</p>
+                <p className="mt-4 text-blue-500 hover:underline">Hem</p>
               </Link>
             </div>
           )}

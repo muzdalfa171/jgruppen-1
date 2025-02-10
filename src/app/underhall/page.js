@@ -34,10 +34,10 @@ const Underhall = () => {
                 Service och underhåll
               </h2>
               <p className="mt-4 text-md text-gray-700 font-semibold">
-                JGruppen är allmänt erkänd som ett av landets ledande företag inom sin bransch och har vuxit till att bli regionens förstahandsval för industriell installation, service, underhåll och reparation. Vi är en flexibel organisation med välstrukturerade processer och tydliga rutiner, vilket gör det möjligt för oss att ta fullt ansvar för både kortsiktiga serviceuppdrag och långsiktiga underhållsprojekt.
+              JGruppen är allmänt erkänd som ett av landets ledande företag inom sin bransch och har vuxit till att bli regionens förstahandsval för industriell installation, service, underhåll och reparation.
               </p>
               <p className="mt-4 text-md text-gray-700">
-                Vår serviceverksamhet är välutbyggd och har under årens lopp samlat omfattande kunskap om pallkranar, miniloadkranar, conveyorsystem, robotar och produktionsautomation.
+              Vi är en flexibel organisation med välstrukturerade processer och tydliga rutiner, vilket gör det möjligt för oss att ta fullt ansvar för både kortsiktiga serviceuppdrag och långsiktiga underhållsprojekt.
               </p>
             </div>
           </div>
@@ -46,7 +46,8 @@ const Underhall = () => {
         <div className=" bg-white py-[3rem] w-full md:w-6/12">
           <div className=" flex flex-col md:px-8">
             <p className="text-md text-gray-700">
-              Vi tar ansvar för hela processen – från planering och projektering till mekanisk montering och elektrisk installation. Med vår expertis och erfarenhet erbjuder vi en helhetslösning anpassad efter era behov.
+            Vår serviceverksamhet är välutbyggd och har under årens lopp samlat omfattande kunskap om pallkranar, miniloadkranar, conveyorsystem, robotar och produktionsautomation.
+            Vi tar ansvar för hela processen – från planering och projektering till mekanisk montering och elektrisk installation. Med vår expertis och erfarenhet erbjuder vi en helhetslösning anpassad efter era behov.
             </p>
 
             <h3 className="md:text-xl text-md py-4 font-bold text-[#4a536e]">
