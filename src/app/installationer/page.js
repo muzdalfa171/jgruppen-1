@@ -48,10 +48,7 @@ const Installationer = () => {
         <div className=" bg-white py-[3rem] md:w-6/12 w-full">
           <div className=" flex flex-col md:px-8">
             <p className="text-md text-gray-700">
-              De följer alltid god industrised och tillämpar de rutiner och
-              procedurer som har lagts fast i olika kvalitetsdokument. Detta
-              avspeglas i noggrant dokumentationsarbete som pågår under hela
-              projekttiden."
+              De följer alltid god industrised och arbetar enligt de rutiner och procedurer som fastställts i olika kvalitetsdokument. Detta återspeglas i ett noggrant dokumentationsarbete som pågår under hela projekttiden."
             </p>
 
             <h3 className="text-xl font-bold text-[#4a536e]">
@@ -59,16 +56,11 @@ const Installationer = () => {
             </h3>
 
             <p className="text-md text-gray-700">
-              Oavsett om det gäller att ta en obemannad kran i drift, att
-              installera en transportör och ett pakethanteringssystem, eller att
-              integrera en fullständig automatisk bearbetningslinje, så har
-              JGruppens medarbetare det elektriska, mekaniska och svetstekniska
-              kunnande som krävs för att jobbet ska bli gjort. "Vi är stolta
-              över vårt rykte om att stå för vårt ord och genomföra våra uppdrag
-              i tid, oavsett hur många mantimmar vi måste lägga in."
-              Industriella kunder som vet att tid är pengar och kräver minimala
-              driftsavbrott uppskattar vårt arbetssätt. Det väcker intresse hos
-              allt fler potentiella nya kunder", tillägger Christopher Jarl.
+              Oavsett om det handlar om att driftsätta en obemannad kran, installera en transportör och ett pakethanteringssystem eller integrera en helt automatiserad bearbetningslinje, besitter JGruppens medarbetare den elektriska, mekaniska och svetstekniska expertis som krävs för att få jobbet gjort.
+            </p>
+
+            <p className="text-md text-gray-700">
+              "Vi är stolta över vårt rykte om att hålla vad vi lovar och leverera i tid – oavsett hur många mantimmar vi måste lägga in," säger Christopher Jarl. Industriella kunder, som förstår att tid är pengar och kräver minimala driftsavbrott, uppskattar vårt arbetssätt. "Det är också något som väcker intresse hos allt fler potentiella kunder," tillägger han.
             </p>
           </div>
         </div>
@@ -126,23 +118,21 @@ const Installationer = () => {
 
           {/* Text Content */}
           <div className="order-1 md:order-2">
+            <h2 className="text-3xl font-bold text-[#4a536e] mb-4">
+              Expertis inom industriell elinstallation och automation
+            </h2>
             <p className="text-md w-full text-gray-700 mb-4">
-              <b>JGruppen</b> har en avdelning med elektriker som är
-              certifierade för maskininstallationer. Vi har lång erfarenhet av
-              industrielektronik, automationselektronik och maskinelektronik. Vi
-              erbjuder allt från installationer till felsökningar och
-              reparationer på er anläggning. Vi kan hjälpa er med antingen
-              enstaka insatser gällande både förebyggande och avhjälpande
-              service likväl som att vi kan ta det fulla ansvaret för
-              underhållet på er arbetsplats.
+              JGruppen har en dedikerad avdelning med certifierade elektriker specialiserade på maskininstallationer. Med lång erfarenhet inom industrielektronik, automation och maskinelektronik erbjuder vi allt från installationer till felsökning och reparationer på er anläggning.
+            </p>
+            <p className="text-md w-full text-gray-700 mb-4">
+              Vi kan bistå med både enstaka insatser, såsom förebyggande och avhjälpande service, eller ta fullt ansvar för underhållet på er arbetsplats.
             </p>
             <p className="text-md font-bold w-full text-gray-700 mb-4">
-              Vi har en stor bredd av personal som är utbildade och erfarna för
-              att möta behoven från våra kunder.
+              Vår personal har bred kompetens och gedigen erfarenhet för att möta våra kunders behov inom:
             </p>
             <ul className="text-md list-none text-gray-700 space-y-2">
               <li>– Automation</li>
-              <li>– El-installation</li>
+              <li>– Elinstallation</li>
               <li>– PLC-styrning</li>
               <li>– Mekanisering</li>
               <li>– Service och reparation</li>

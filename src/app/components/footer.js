@@ -9,17 +9,26 @@ import { SlSocialTwitter } from "react-icons/sl";
 import { TiSocialFacebook } from "react-icons/ti";
 import { TbBrandTelegram } from "react-icons/tb";
 import { FaWhatsapp } from "react-icons/fa6";
-
+import Image from "next/image";
 const Footer = () => {
   return (
     <footer className="bg-gray-100  lg:py-8">
       <div className="flex md:flex-row flex-col justify-around ">
         {/* Logo Section */}
         <div className="w-full flex flex-col md:items-center items-start p-8">
-          <img
+          <Image
             src="/img/jgruppen-logo-skugga.png"
             alt="JGruppen"
-            className="xl:h-10 h-12  w-[12rem]"
+            width={192}  // 12rem * 16px/rem = 192px
+            height={80}  // Maintain aspect ratio based on original image dimensions
+            className="xl:h-10 h-12 w-[12rem]"
+            quality={100}
+            priority={true}
+            style={{ 
+              objectFit: 'contain',
+              maxWidth: '100%',
+              height: 'auto'
+            }}
           />
 
           {/* Social Media Icons */}
@@ -51,23 +60,7 @@ const Footer = () => {
               <TiSocialFacebook className="text-blue-800 h-4 w-4 sm:h-4 sm:w-4 md:h-3 md:w-3 lg:h-3 lg:w-3 hover:text-blue-900" />
             </Link>
 
-            <Link
-              href="https://www.telegram.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-[#636466] rounded-lg p-1"
-            >
-              <TbBrandTelegram className="text-blue-500 h-4 w-4 sm:h-4 sm:w-4 md:h-3 md:w-3 lg:h-3 lg:w-3 hover:text-blue-700" />
-            </Link>
 
-            <Link
-              href="https://wa.me/yourwhatsappnumber"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-[#636466] rounded-lg p-1"
-            >
-              <FaWhatsapp className="text-green-500 h-4 w-4 sm:h-4 sm:w-4 md:h-3 md:w-3 lg:h-3 lg:w-3 hover:text-green-700" />
-            </Link>
           </div>
         </div>
 
@@ -113,7 +106,7 @@ const Footer = () => {
           <div className="mt-4">
             <div className="flex items-center ">
               <MdEmail className="mr-2" />
-              <h3>e-post</h3>
+              <h3>E-post</h3>
             </div>
             <Link
               href="mailto:support@jgruppen.com"
@@ -132,7 +125,7 @@ const Footer = () => {
         {/* Quick Links */}
         <div className="w-full p-8 text-sm text-left md:border-l   flex items-start md:justify-center lg:border-gray-300">
           <div>
-            <h3 className="font-bold text-lg">Snabba länkar</h3>
+            <h3 className="font-bold text-lg">Snabbalänkar</h3>
             <ul className="flex flex-col space-y-2 mt-4">
               {[
                 { href: "/", label: "Hem" },
@@ -162,3 +155,9 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
+
+
