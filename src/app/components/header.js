@@ -51,10 +51,11 @@ export default function Header() {
     { href: "/", label: "Hem" },
     { href: "/installationer", label: "Installationer" },
     { href: "/underhall", label: "Underhåll" },
-    { href: "/produkter", label: "Produkter" },
+    { href: "/produkter", label: "Tillverkning och försäljning" },
     { href: "/om-oss", label: "Om oss" },
     { href: "/kontakt", label: "Kontakt" },
     { href: "/jobba-med-oss", label: "Jobba med oss" },
+
   ];
 
   const menuButtonColor = pathname === "/" && !isScrolled ? "text-white" : "text-[#4A536E]";

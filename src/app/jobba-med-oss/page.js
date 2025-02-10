@@ -6,8 +6,6 @@ import { db } from "../lib/firebase";
 import Head from "next/head";
 import JobCard from "./JobCard";
 
-// ... (JobCard component remains the same)
-
 const JobList = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,7 +21,7 @@ const JobList = () => {
           const jobData = doc.data();
           return {
             id: doc.id,
-            logo: jobData.logo || "/img/JGruppen-logo.png", // Use your actual default logo path
+            logo: jobData.logo || "/img/JGruppen-logo.png",
             title: jobData.title,
             designation: jobData.job_category,
             location: jobData.job_location?.name || "Unknown",
@@ -43,7 +41,7 @@ const JobList = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-lg">Loading jobs...</p>
+        <p className="text-base">Loading jobs...</p>
       </div>
     );
   }
@@ -51,7 +49,7 @@ const JobList = () => {
   if (error) {
     return (
       <div className="flex items-center justify-center">
-        <p className="text-lg text-red-500">{error}</p>
+        <p className="text-base text-red-500">{error}</p>
       </div>
     );
   }
@@ -59,17 +57,16 @@ const JobList = () => {
   return (
     <div className="my-10 md:py-20 py-10 bg-gray-100 flex items-center justify-center">
       <div className="bg-gray-300 rounded-lg px-8 shadow-lg w-[95%] ">
-        <h1 className="text-4xl font-bold text-center mt-8">Lediga jobb</h1>
+        <h2 className="text-2xl font-bold text-[#4a536e] text-center mt-8">Lediga jobb</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {jobs.length > 0 ? (
             jobs.map((job) => <JobCard key={job.id} job={job} />)
           ) : (
-            <div className="col-span-full text-center py-10"> {/* Center the message and add padding */}
-              <p className="text-2xl font-semibold text-gray-600">Inga lediga jobb för tillfället!</p>
-              <p className="mt-4 text-gray-500">Håll utkik!</p> {/* Added a "check back later" message */}
-              {/* Optional: Add a link to your contact page or careers page */}
+            <div className="col-span-full text-center py-10">
+              <p className="text-base font-semibold text-gray-600">Inga lediga jobb för tillfället!</p>
+              <p className="mt-4 text-base text-gray-500">Håll utkik!</p>
               <Link href="/">
-                <p className="mt-4 text-blue-500 hover:underline">Hem</p>
+                <p className="mt-4 text-base text-[#4a536e] hover:underline">Hem</p>
               </Link>
             </div>
           )}
