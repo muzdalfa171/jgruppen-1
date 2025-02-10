@@ -16,7 +16,6 @@ const ContactPage = () => {
     />
     <meta name="keywords" content="kontakt, contact, JGruppen, installation" />
   </Head>;
-
   const [errors, setErrors] = useState({});
   const [remainingChars, setRemainingChars] = useState(500);
   const [formData, setFormData] = useState({
@@ -28,52 +27,42 @@ const ContactPage = () => {
     subject: "",
     message: "",
   });
-
   // Handle field changes
   const handleChange = (e) => {
     const { id, value } = e.target;
-
     // Handle character count for the message field
     if (id === "message") {
       setRemainingChars(500 - value.length);
     }
-
     setFormData({ ...formData, [id]: value });
   };
-
   // Validate name field for alphabets and length
   const validateName = (name) => {
     const nameRegex = /^[A-Za-z\s]{1,25}$/; // Only allows alphabets and max 25 chars
     return nameRegex.test(name);
   };
-
   // Validate email format
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
-
   // Validate the form on submit and add to Firestore
   const handleSubmit = async (e) => {
     e.preventDefault();
     let tempErrors = {};
-
     // Validation for name field
     if (!validateName(formData.name)) {
       tempErrors.name =
         "Name should be max 25 letters and contain only alphabets.";
     }
-
     // Validation for email field
     if (!validateEmail(formData.email)) {
       tempErrors.email = "Invalid email format.";
     }
-
     // Validation for message length
     if (remainingChars < 0) {
       tempErrors.message = "Message cannot exceed 500 characters.";
     }
-
     // If no validation errors, proceed to submit form data to Firestore
     if (Object.keys(tempErrors).length === 0) {
       const userId = uuidv4(); // Generate a unique user ID
@@ -90,11 +79,9 @@ const ContactPage = () => {
           message: formData.message,
           created_at: new Date(), // Optional: Store the timestamp
         });
-
         // Show success toast notification
         toast.success(`Your message has been submitted successfully!`, {
         });
-
         // Reset form data after successful submission
         setFormData({
           business_type: "",
@@ -120,7 +107,6 @@ const ContactPage = () => {
       }, 20000);
     }
   };
-
   return (
     <>
       <div className="w-full ">
@@ -155,7 +141,6 @@ const ContactPage = () => {
                 </option>
               </select>
             </div>
-
             <div className="mb-4">
               <input
                 className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -172,7 +157,6 @@ const ContactPage = () => {
                 </p>
               )}
             </div>
-
             <div className="mb-4">
               <input
                 className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -189,7 +173,6 @@ const ContactPage = () => {
                 </p>
               )}
             </div>
-
             <div className="mb-4">
               <input
                 className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -200,7 +183,6 @@ const ContactPage = () => {
                 onChange={handleChange}
               />
             </div>
-
             <div className="mb-4">
               <input
                 className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -211,7 +193,6 @@ const ContactPage = () => {
                 onChange={handleChange}
               />
             </div>
-
             <div className="mb-4">
               <input
                 className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -222,7 +203,6 @@ const ContactPage = () => {
                 onChange={handleChange}
               />
             </div>
-
             <div className="mb-6">
               <div className="relative">
                 <textarea
@@ -235,20 +215,17 @@ const ContactPage = () => {
                   rows="4"
                   maxLength={500} // Limit to 500 characters
                 ></textarea>
-
                 {/* Character counter */}
                 <span className="absolute bottom-2 right-4 text-sm text-gray-500">
                   {remainingChars} / 500
                 </span>
               </div>
-
               {errors.message && (
                 <p className="text-red-500 text-xs italic mt-2">
                   {errors.message}
                 </p>
               )}
             </div>
-
             <div className="flex py-8 items-center justify-between">
               <button
                 className="bg-[#4a536e] hover:bg-[#636466] text-white font-bold py-3 mx-auto w-full rounded focus:outline-none focus:shadow-outline"
@@ -275,5 +252,4 @@ const ContactPage = () => {
     </>
   );
 };
-
 export default ContactPage;
