@@ -1,50 +1,52 @@
-
 import { useState } from "react";
 import Link from "next/link";
-
 export default function Slideshow() {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const slides = [
-    "/img/AdobeStock_379435239-2048x1365.jpeg",
-    "/img/slide2.jpg",
-    "/img/slide3.jpg",
+    {
+      image: "/img/AdobeStock_379435239-2048x1365.jpeg",
+      title: "JGruppen",
+      subtitle: "Värdehöjande tjänster för optimerad drift",
+      buttonText: "Kontakta oss"
+    },
+    {
+      image: "/img/slide2.jpg",
+      title: "Underhållstjänster",
+      subtitle: "Kontinuerlig driftoptimering",
+      buttonText: "Läs mer om underhåll"
+    },
+    {
+      image: "/img/slide3.jpg",
+      title: "Specialiserad Utbildning",
+      subtitle: "Säkerhet och kompetensutveckling",
+      buttonText: "Utbildningsinformation"
+    }
   ];
-
   const nextImage = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
-
   const prevImage = () => {
     setCurrentSlide((prev) =>
       prev === 0 ? slides.length - 1 : prev - 1
     );
   };
-
   return (
     <section
       className="relative w-full h-[35rem] bg-cover bg-center"
-      style={{ backgroundImage: `url(${slides[currentSlide]})` }}
+      style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
     >
       {/* Slideshow Content */}
       <div className="absolute inset-0 flex gap-4 flex-col justify-center items-center text-white bg-black bg-opacity-60 p-4 md:p-8">
-        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 text-[#ffffff] font-bold text-center">
-          JGruppen
+        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 text-[#FFFFFF] font-bold text-center">
+          {slides[currentSlide].title}
         </h1>
-        {/* text-[#4a536e] */}
         <p className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center">
-          Värdehöjande tjänster för optimerad drift
+          {slides[currentSlide].subtitle}
         </p>
-        <p className="mt-4 text-center text-sm sm:text-base md:text-lg">
-          Intresserad?
-         
-        </p>
-        <button className="mt-6 px-6 py-2 sm:px-8 sm:py-3 md:px-10 md:py-4 border border-white text-white font-semibold hover:bg-[#4a536e] hover:text-white transition duration-300">
-         
-          <Link href="/kontakt">  Kontakta oss</Link>
+        <button className="mt-6 px-6 py-2 sm:px-8 sm:py-3 md:px-10 md:py-4 border border-white text-white font-semibold hover:bg-[#4A536E] hover:text-white transition duration-300">
+          <Link href="/kontakt">{slides[currentSlide].buttonText}</Link>
         </button>
       </div>
-
       {/* Slideshow Controls */}
       <div
         className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer"
@@ -75,4 +77,3 @@ export default function Slideshow() {
     </section>
   );
 }
-
