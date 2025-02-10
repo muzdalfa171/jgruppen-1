@@ -36,7 +36,7 @@ export default function Slideshow() {
   };
 
   return (
-    <section className="relative w-full h-[35rem] overflow-hidden">
+    <section className="relative w-full h-[18rem] xs:h-[20rem] sm:h-[25rem] md:h-[35rem] overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src={slides[currentSlide].image}
@@ -44,6 +44,7 @@ export default function Slideshow() {
           fill
           priority
           quality={100}
+          sizes="(max-width: 320px) 280px, (max-width: 640px) 600px, 1000px"
           style={{
             objectFit: 'cover',
             objectPosition: 'center'
@@ -52,14 +53,14 @@ export default function Slideshow() {
       </div>
 
       {/* Slideshow Content */}
-      <div className="absolute inset-0 flex gap-4 flex-col justify-center items-center text-white bg-black bg-opacity-60 p-4 md:p-8">
-        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 text-[#FFFFFF] font-bold text-center">
+      <div className="absolute inset-0 flex gap-2 sm:gap-4 flex-col justify-center items-center text-white bg-black bg-opacity-60 p-4 md:p-8">
+        <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl mb-2 sm:mb-4 text-[#FFFFFF] font-bold text-center">
           {slides[currentSlide].title}
         </h1>
-        <p className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center">
+        <p className="text-sm xs:text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center">
           {slides[currentSlide].subtitle}
         </p>
-        <button className="mt-6 px-6 py-2 sm:px-8 sm:py-3 md:px-10 md:py-4 border border-white text-white font-semibold hover:bg-[#4A536E] hover:text-white transition duration-300">
+        <button className="mt-3 sm:mt-6 px-4 py-1.5 sm:px-6 sm:py-2 md:px-8 md:py-3 border border-white text-white font-semibold hover:bg-[#4A536E] hover:text-white transition duration-300 text-xs xs:text-sm sm:text-base">
           <Link href="/kontakt">{slides[currentSlide].buttonText}</Link>
         </button>
       </div>

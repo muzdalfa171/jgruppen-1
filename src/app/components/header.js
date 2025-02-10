@@ -65,7 +65,7 @@ export default function Header() {
         pathname === "/" && !isScrolled ? "bg-transparent" : "bg-[#f0f1f5] shadow-md"
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center">
+      <div className="container w-full mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link href="/">
@@ -74,7 +74,7 @@ export default function Header() {
               alt="JGruppen Company Logo"
               width={192}
               height={80}
-              className="h-6 sm:h-8 lg:h-12 w-auto"
+              className="h-4 xs:h-5 sm:h-6 md:h-8 lg:h-12 w-auto"
               quality={100}
               priority={true}
               style={{
