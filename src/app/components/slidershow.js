@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 export default function Slideshow() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
@@ -10,31 +12,45 @@ export default function Slideshow() {
       buttonText: "Kontakta oss"
     },
     {
-      image: "/img/slide2.jpg",
+      image: "/img/slide2.jpg", 
       title: "Underhållstjänster",
       subtitle: "Kontinuerlig driftoptimering",
       buttonText: "Läs mer om underhåll"
     },
     {
       image: "/img/slide3.jpg",
-      title: "Specialiserad Utbildning",
+      title: "Specialiserad Utbildning", 
       subtitle: "Säkerhet och kompetensutveckling",
       buttonText: "Utbildningsinformation"
     }
   ];
+
   const nextImage = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
+
   const prevImage = () => {
     setCurrentSlide((prev) =>
       prev === 0 ? slides.length - 1 : prev - 1
     );
   };
+
   return (
-    <section
-      className="relative w-full h-[35rem] bg-cover bg-center"
-      style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
-    >
+    <section className="relative w-full h-[35rem] overflow-hidden">
+      <div className="absolute inset-0">
+        <Image
+          src={slides[currentSlide].image}
+          alt={slides[currentSlide].title}
+          fill
+          priority
+          quality={100}
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center'
+          }}
+        />
+      </div>
+
       {/* Slideshow Content */}
       <div className="absolute inset-0 flex gap-4 flex-col justify-center items-center text-white bg-black bg-opacity-60 p-4 md:p-8">
         <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 text-[#FFFFFF] font-bold text-center">
@@ -47,32 +63,49 @@ export default function Slideshow() {
           <Link href="/kontakt">{slides[currentSlide].buttonText}</Link>
         </button>
       </div>
-      {/* Slideshow Controls */}
-      <div
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer"
-        onClick={prevImage}
-      >
-        <svg width="15" height="28" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M10 2 L2 14 L10 26"
-            stroke="white"
-            strokeWidth="2"
-            fill="none"
-          />
-        </svg>
+
+      {/* Slideshow Controls - Arrows for larger screens */}
+      <div className="hidden sm:block">
+        <div
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer"
+          onClick={prevImage}
+        >
+          <svg width="15" height="28" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10 2 L2 14 L10 26"
+              stroke="white"
+              strokeWidth="2"
+              fill="none"
+            />
+          </svg>
+        </div>
+        <div
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer"
+          onClick={nextImage}
+        >
+          <svg width="15" height="28" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M5 2 L13 14 L5 26"
+              stroke="white"
+              strokeWidth="2"
+              fill="none"
+            />
+          </svg>
+        </div>
       </div>
-      <div
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer"
-        onClick={nextImage}
-      >
-        <svg width="15" height="28" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M5 2 L13 14 L5 26"
-            stroke="white"
-            strokeWidth="2"
-            fill="none"
+
+      {/* Slideshow Controls - Dots for mobile */}
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 sm:hidden">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full ${
+              currentSlide === index ? 'bg-white' : 'bg-white/50'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
           />
-        </svg>
+        ))}
       </div>
     </section>
   );
