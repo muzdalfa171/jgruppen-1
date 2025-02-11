@@ -24,10 +24,10 @@ const Produkter = () => {
       </Head>
 
       {/* First Section - Installationer */}
-      <section className="flex flex-col p-4 sm:p-8 md:p-12">
-        <div className="bg-white dark:bg-gray-900 w-full py-[2rem] sm:py-[3rem] relative">
+      <section className="flex md:flex-row flex-col p-6 sm:p-12">
+        <div className="bg-white dark:bg-gray-900 w-full py-[3rem] relative">
           <div
-            className="absolute md:h-[16rem] -top-3 xs:-left-6 -left-2
+            className="absolute md:h-[16rem] -top-6 -left-6 
               h-[13rem] md:w-[17rem] w-[15rem] border-[6px] border-[#4a536e] dark:border-[#2a334e] z-10"
           ></div>
 

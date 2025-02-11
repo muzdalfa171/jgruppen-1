@@ -25,19 +25,28 @@ const geistMono = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="sv">
       <head>
         <link rel="icon" href="/img/JGruppen-logo.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Triodion&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        {children}
+        <div className="triodion-regular">
+          <div className="font-wrapper">
+            {children}
+          </div>
+        </div>
         <Footer />
          {/* Google Analytics Component */}
-         <GoogleAnalytics gaId="G-RRFG0KW6HD" /> {/* Replace G-XYZ with your actual GA4 Measurement ID */}
-      
+       
       </body>
     </html>
   );

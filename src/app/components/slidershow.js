@@ -8,7 +8,7 @@ export default function Slideshow() {
     {
       image: "/img/AdobeStock_379435239-2048x1365.jpeg",
       title: "JGruppen",
-      subtitle: " Mängfcetteradverksamhet med värdehöjande tjänster",
+      subtitle: " Mångfacetterad verksamhet med värdehöjande tjänster",
       buttonText: "Kontakta oss",
       link: "/kontakt"
     },
@@ -16,15 +16,15 @@ export default function Slideshow() {
       image: "/img/slide2.jpg", 
       title: "Underhållstjänster",
       subtitle: "Kontinuerlig driftoptimering, optimerade flöden och effektivare verksamhet",
-      buttonText: "Läs mer om underhåll",
+      buttonText: "Läs mer",
       link: "/underhall"
     },
     {
       image: "/img/slide3.jpg",
       title: "Specialiserade Utbildningar", 
       subtitle: "Kompetensutveckling inom flera arbetsomräden",
-      buttonText: "Utbildningsinformation",
-      link: "https://jgruppen.se/om-oss"
+      buttonText: "Läs mer",
+      link: "/om-oss"
     }
   ];
 

@@ -7,6 +7,7 @@ import React from "react";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Slideshow from "./components/slidershow";
+import { H2, H4 } from '../components/Rubriker'
 
 export default function Home() {
   return (
@@ -78,7 +79,7 @@ export default function Home() {
                             height={50}
                             alt="Tillverkning och försäljning"
                             className="object-contain"
-                          />``
+                          />
                         </div>
                         <p className="text-sm sm:text-base md:text-lg font-bold sm:ml-4 md:ml-6 lg:ml-8 truncate text-center sm:text-left">
                           Tillverkning och försäljning
@@ -98,13 +99,13 @@ export default function Home() {
                       <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae]">
                         JGruppen – en framgångssaga
                       </h2>
-                      <p className="mt-4 text-sm sm:text-base text-gray-600">
+                      <h4 className="mt-4 text-sm sm:text-base font-bold text-gray-600">
                         JGruppens historia börjar 2003, när VD Christopher Jarl
                         bildade bolaget JCon i Motala, vid Vätterns östra
                         strand. Detta bolag var från början inriktat på att
                         utföra elektriska och mekaniska installations- och
                         underhållsarbeten.
-                      </p>
+                      </h4>
                       <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
                       Som en engagerad fristående extern entreprenör fick JCon allt fler uppdrag inom olika projekt åt stora internationella systembyggare och integrationsspecialister med hög kompetens.
 Tack vare sitt rykte att kunna utföra kostnadseffektiva jobb, präglade av hög kvalitet, kompetenta yrkesmän och med leveranssäkerhet i högsätet, kunde JCon ta hem allt större uppdrag och började också öka sina åtaganden utanför Sverige.
