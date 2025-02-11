@@ -90,11 +90,11 @@ export default function Home() {
                 </div>
               </div>
               {/* Right Side - Company Info */}
-              <div className="lg:w-[60%] w-full md:ml-16 ml-8 space-y-24">
+              <div className="lg:w-[60%] w-full md:ml-16 ml-8  space-y-24">
                 <div className="relative">
                   <div className="absolute md:h-[16rem] -top-5 md:-left-10 -left-[1rem] h-[13rem] md:w-[28rem] w-[15rem] border-[6px] mb-11 border-[#4a536e] dark:border-[#2a334e] z-10"></div>
-                  <div className="relative bg-white dark:bg-gray-900 w-full mt-12 z-20">
-                    <div className="md:max-w-2xl w-11/12 flex flex-col p-8">
+                  <div className="relative bg-white dark:bg-gray-900 w-full mt-12 p-6 z-20 ">
+                    <div className="md:max-w-2xl w-11/12 flex flex-col md:p-8 ">
                       <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae]">
                         JGruppen – en framgångssaga
                       </h2>
@@ -137,7 +137,7 @@ Tack vare sitt rykte att kunna utföra kostnadseffektiva jobb, präglade av hög
                   <div className="bg-[#4a536e] dark:bg-[#2a334e] py-2 text-white">
                     <h3 className="text-sm sm:text-base font-bold">Mekanisk installation</h3>
                   </div>
-                  <p className="mt-2 px-4 pt-3 min-h-[10.3rem] text-xs sm:text-sm text-gray-600 dark:text-gray-300">
+                  <p className="mt-2 mx-6 md:px-4 pt-3 min-h-[10.3rem] text-xs sm:text-sm  text-gray-600 dark:text-gray-300">
                     Företaget har sin grund inom installation av
                     materialhanteringssystem. Vi har sedan dess fortsatt fylla
                     behovet hos våra kunder och det är det som har gjort att vi
@@ -237,7 +237,7 @@ Tack vare sitt rykte att kunna utföra kostnadseffektiva jobb, präglade av hög
         </>
         {/* Categories Section */}
        
-        <section className="gap-8 w-full">
+        <section className="gap-8 w-full ">
           <div className="bg-[url('/img/3.png')] py-16 flex justify-end bg-cover bg-center w-full">
             <div className="flex flex-col md:flex-row md:justify-end justify-center w-full items-center sm:space-y-0 space-y-8 md:max-w-[66rem] text-white py-6">
               {/* Left Column - Heading */}
