@@ -47,7 +47,7 @@ const JobList = () => {
       </Head>
 
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-[#4a536e] dark:text-[#8a93ae] text-center mb-12">
+        <h1 className="text-lg md:text-xl font-bold text-[#4a536e] dark:text-[#8a93ae] text-center mb-12">
           Lediga tjänster
         </h1>
 
@@ -57,32 +57,32 @@ const JobList = () => {
           </div>
         ) : error ? (
           <div className="bg-red-100/80 backdrop-blur-sm dark:bg-red-900/80 p-6 rounded-xl text-center">
-            <p className="text-red-600 dark:text-red-300">{error}</p>
+            <p className="text-xs md:text-sm text-red-600 dark:text-red-300">{error}</p>
             <button 
               onClick={() => window.location.reload()}
-              className="mt-4 px-6 py-2.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all duration-300 transform hover:-translate-y-1"
+              className="mt-4 px-6 py-2.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all duration-300 transform hover:-translate-y-1 text-xs md:text-sm"
             >
               Försök igen
             </button>
           </div>
         ) : (
-          <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-2xl shadow-xl p-8">
+          <div className="bg-[#f0f1f5] dark:bg-gray-900/80 backdrop-blur-sm rounded-2xl shadow-xl p-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {jobs.length > 0 ? (
                 jobs.map((job) => <JobCard key={job.id} job={job} />)
               ) : (
                 <div className="col-span-full flex flex-col items-center justify-center py-20 px-6">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-2xl max-w-3xl w-full text-center backdrop-blur-sm">
-                    <h2 className="text-3xl font-bold bg-gradient-to-r from-[#4a536e] to-[#6a738e] dark:from-[#8a93ae] dark:to-[#aab3ce] bg-clip-text text-transparent mb-6">
+                  <div className="bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-2xl max-w-3xl w-full text-center backdrop-blur-sm">
+                    <h2 className="text-lg md:text-xl font-bold text-[#4a536e] dark:text-[#8a93ae] mb-6">
                       Inga lediga tjänster just nu
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-300 mb-10 text-xl leading-relaxed">
+                    <p className="text-xs md:text-sm text-[#4a536e] dark:text-gray-300 mb-10 leading-relaxed">
                       Vi är alltid på jakt efter nya talanger som vill vara med på vår resa. Skicka en spontanansökan och låt oss veta vad du kan bidra med!
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
                       <Link 
                         href="/kontakt"
-                        className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#4a536e] to-[#5a637e] dark:from-[#2a334e] dark:to-[#3a435e] text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                        className="group inline-flex items-center justify-center px-8 py-4 bg-[#4a536e] hover:bg-[#3a435e] text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 text-xs md:text-sm"
                       >
                         <span>Skicka spontanansökan</span>
                         <svg className="w-5 h-5 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@ const JobList = () => {
                       </Link>
                       <Link 
                         href="/om-oss"
-                        className="group inline-flex items-center justify-center px-8 py-4 border-2 border-[#4a536e] dark:border-[#2a334e] text-[#4a536e] dark:text-[#8a93ae] rounded-xl hover:bg-[#4a536e] hover:text-white dark:hover:bg-[#2a334e] transition-all duration-300 transform hover:-translate-y-1"
+                        className="group inline-flex items-center justify-center px-8 py-4 border-2 border-[#4a536e] text-[#4a536e] dark:text-[#8a93ae] rounded-xl hover:bg-[#4a536e] hover:text-white dark:hover:bg-[#2a334e] transition-all duration-300 transform hover:-translate-y-1 text-xs md:text-sm"
                       >
                         <span>Läs mer om oss</span>
                         <svg className="w-5 h-5 ml-2 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

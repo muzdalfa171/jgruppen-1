@@ -78,7 +78,7 @@ export default function Home() {
                             height={50}
                             alt="Tillverkning och försäljning"
                             className="object-contain"
-                          />
+                          />``
                         </div>
                         <p className="text-sm sm:text-base md:text-lg font-bold sm:ml-4 md:ml-6 lg:ml-8 truncate text-center sm:text-left">
                           Tillverkning och försäljning

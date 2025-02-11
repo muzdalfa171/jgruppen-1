@@ -46,17 +46,26 @@ const ContactPage = () => {
     const tempErrors = {};
 
     // Validering
-    if (!validateName(formData.name)) {
+    if (!formData.name.trim()) {
+      tempErrors.name = "Var god fyll i det här fältet!";
+    } else if (!validateName(formData.name)) {
       tempErrors.name = "Namnet får max innehålla 25 bokstäver och endast alfabetiska tecken.";
     }
-    if (!validateEmail(formData.email)) {
+    
+    if (!formData.email.trim()) {
+      tempErrors.email = "Var god fyll i det här fältet!";
+    } else if (!validateEmail(formData.email)) {
       tempErrors.email = "Ogiltig e-postadress.";
     }
-    if (remainingChars < 0) {
+
+    if (!formData.message.trim()) {
+      tempErrors.message = "Var god fyll i det här fältet!";
+    } else if (remainingChars < 0) {
       tempErrors.message = "Meddelandet får inte överstiga 500 tecken.";
     }
-    if (!formData.message) {
-      tempErrors.message = "Var god fyll i det här fältet!";
+
+    if (!formData.business_type) {
+      tempErrors.business_type = "Var god välj ett alternativ!";
     }
 
     if (Object.keys(tempErrors).length === 0) {
@@ -88,7 +97,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="pt-10 md:pt-40 container w-full mx-auto">
+    <div className="pt-40 container w-full mx-auto bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg">
           <form onSubmit={handleSubmit} className="p-8">
@@ -97,16 +106,18 @@ const ContactPage = () => {
             </h2>
 
             <div className="space-y-6">
-              <div>
+            <div>
                 <label htmlFor="business_type" className="block text-sm font-medium text-[#4a536e] dark:text-[#8a93ae] mb-1">
                   Företagstyp<span className="text-red-500">*</span>
                 </label>
                 <select
-                  className="w-full h-[3.4rem] px-4 py-3 rounded-lg border border-[#4a536e] dark:border-[#2a334e] bg-white dark:bg-gray-900 text-[#4a536e] dark:text-[#8a93ae] focus:ring-2 focus:ring-[#4a536e] dark:focus:ring-[#8a93ae] transition duration-200"
-                  id="business_type" 
+                  id="business_type"
                   value={formData.business_type}
                   onChange={handleChange}
                   required
+                  className="w-full h-[3.4rem] px-4 py-3 rounded-lg border border-[#4a536e] dark:border-[#2a334e] bg-white dark:bg-gray-800"
+                  onInvalid={(e) => e.target.setCustomValidity("Var god välj ett alternativ!")}
+                  onInput={(e) => e.target.setCustomValidity("")}
                 >
                   <option value="" disabled>Välj företagstyp</option>
                   <option value="smallBusiness">Litet företag</option>
@@ -126,7 +137,7 @@ const ContactPage = () => {
                     {(field === "name" || field === "email") && <span className="text-red-500 ml-1">*</span>}
                   </label>
                   <input
-                    className="w-full px-4 py-3 rounded-lg border border-[#4a536e] dark:border-[#2a334e] bg-white dark:bg-gray-900 text-[#4a536e] dark:text-[#8a93ae] focus:ring-2 focus:ring-[#4a536e] dark:focus:ring-[#8a93ae] transition duration-200"
+                    className="w-full px-4 py-3 rounded-lg border border-[#4a536e] dark:border-[#2a334e] bg-white dark:bg-gray-800 text-[#4a536e] dark:text-[#8a93ae] focus:ring-2 focus:ring-[#4a536e] dark:focus:ring-[#8a93ae] transition duration-200"
                     id={field}
                     type={field === "email" ? "email" : "text"}
                     placeholder={field === "name" ? "Ditt namn" :
@@ -144,32 +155,25 @@ const ContactPage = () => {
                 </div>
               ))}
 
-              <div>
-                <div className="relative">
-                  <label htmlFor="message" className="block text-sm font-medium text-[#4a536e] dark:text-[#8a93ae] mb-1">
-                    Meddelande<span className="text-red-500 ml-1">*</span>
-                  </label>
-                  <textarea
-                    className="w-full px-4 py-3 rounded-lg border border-[#4a536e] dark:border-[#2a334e] bg-white dark:bg-gray-900 text-[#4a536e] dark:text-[#8a93ae] focus:ring-2 focus:ring-[#4a536e] dark:focus:ring-[#8a93ae] transition duration-200 resize-none"
-                    id="message"
-                    placeholder="Skriv ditt meddelande här"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="4"
-                    maxLength={500}
-                  />
-                  <span className="absolute bottom-2 right-2 text-sm text-[#4a536e] dark:text-[#8a93ae]">
-                    {remainingChars} / 500
-                  </span>
-                </div>
-                {errors.message && (
-                  <p className="mt-1 text-sm text-red-500">{errors.message}</p>
-                )}
+<div>
+                <label htmlFor="message" className="block text-sm font-medium text-[#4a536e] dark:text-[#8a93ae] mb-1">
+                  Meddelande <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows="4"
+                  maxLength={500}
+                  className="w-full px-4 py-3 rounded-lg border border-[#4a536e] dark:border-[#2a334e] bg-white dark:bg-gray-800 resize-none"
+                  onInvalid={(e) => e.target.setCustomValidity("Var god fyll i det här fältet!")}
+                  onInput={(e) => e.target.setCustomValidity("")}
+                />
               </div>
 
               <button
-                className="w-full py-3 px-6 rounded-lg bg-[#4a536e] hover:bg-[#3a435e] dark:bg-[#2a334e] dark:hover:bg-[#1a233e] text-white font-semibold transition duration-200 transform hover:scale-[1.02]"
+                className="w-full py-3 px-6 rounded-lg bg-[#4a536e] hover:bg-[#2a334e] dark:bg-[#2a334e] dark:hover:bg-[#4a536e] text-white font-semibold transition duration-200 transform hover:scale-[1.02]"
                 type="submit"
               >
                 Skicka meddelande
