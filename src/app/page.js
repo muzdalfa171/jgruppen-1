@@ -98,7 +98,7 @@ export default function Home() {
                       <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e]">
                         JGruppen – en framgångssaga
                       </h2>
-                      <p className="mt-4 text-sm sm:text-base text-gray-600 font-semibold">
+                      <p className="mt-4 text-sm sm:text-base text-gray-600">
                         JGruppens historia börjar 2003, när VD Christopher Jarl
                         bildade bolaget JCon i Motala, vid Vätterns östra
                         strand. Detta bolag var från början inriktat på att

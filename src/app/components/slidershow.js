@@ -8,21 +8,21 @@ export default function Slideshow() {
     {
       image: "/img/AdobeStock_379435239-2048x1365.jpeg",
       title: "JGruppen",
-      subtitle: "Värdehöjande tjänster för optimerad drift",
+      subtitle: " Mängfcetteradverksamhet med värdehöjande tjänster",
       buttonText: "Kontakta oss",
       link: "/kontakt"
     },
     {
       image: "/img/slide2.jpg", 
       title: "Underhållstjänster",
-      subtitle: "Kontinuerlig driftoptimering",
+      subtitle: "Kontinuerlig driftoptimering, optimerade flöden och effektivare verksamhet",
       buttonText: "Läs mer om underhåll",
       link: "/underhall"
     },
     {
       image: "/img/slide3.jpg",
-      title: "Specialiserad Utbildning", 
-      subtitle: "Säkerhet och kompetensutveckling",
+      title: "Specialiserade Utbildningar", 
+      subtitle: "Kompetensutveckling inom flera arbetsomräden",
       buttonText: "Utbildningsinformation",
       link: "https://jgruppen.se/om-oss"
     }
