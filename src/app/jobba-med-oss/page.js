@@ -41,7 +41,7 @@ const JobList = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-base">Loading jobs...</p>
+        <p className="text-base">Laddar sidan...</p>
       </div>
     );
   }

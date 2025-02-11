@@ -79,7 +79,7 @@ const ContactPage = () => {
           created_at: new Date(),
         });
 
-        toast.success(`Your message has been submitted successfully!`, {});
+        toast.success(`Ditt mail har skickats`, {});
 
         setFormData({
           business_type: "",
@@ -93,14 +93,14 @@ const ContactPage = () => {
         setRemainingChars(500);
       } catch (error) {
         toast.error(
-          `There was an error submitting your message: ${error.message}`,
+          `Var god fyll i det här fältet!: ${error.message}`,
         );
       }
     } else {
-      setErrors(tempErrors);
-      setTimeout(() => {
-        setErrors({});
-      }, 20000);
+      if (!formData.message) {
+        tempErrors.message = "Var god fyll i det här fältet!";
+      }
+     
     }
   };
 
@@ -108,140 +108,144 @@ const ContactPage = () => {
     <>
       <div className="container w-full mx-auto">
         <div className="lg:px-52 py-20 lg:mt-7 p-8 container w-full mx-auto">
-          <form
-            onSubmit={handleSubmit}
-            className="bg-[#81828531] px-4 lg:px-32 w-full pt-6 pb-8 mb-4"
-          >
-            <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-[#4a536e] text-center py-3 lg:p-8">
-              Kontakt
-            </h2>
-            <div className="mb-4 relative">
-              <select
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-                id="business_type"
-                value={formData.business_type}
-                onChange={handleChange}
-                required
-              >
-                <option className="text-xs xs:text-sm sm:text-base" value="" disabled>
-                  Välj företagstyp
-                </option>
-                <option className="text-xs xs:text-sm sm:text-base" value="smallBusiness">
-                  Litet företag
-                </option>
-                <option className="text-xs xs:text-sm sm:text-base" value="mediumBusiness">
-                  Medelstort företag
-                </option>
-                <option className="text-xs xs:text-sm sm:text-base" value="enterprise">
-                  Stort företag
-                </option>
-              </select>
-            </div>
-            <div className="mb-4">
-              <input
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-                id="name"
-                type="text"
-                placeholder="Namn*"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-              {errors.name && (
-                <p className="text-red-500 text-xs xs:text-sm sm:text-base italic mt-2">
-                  {errors.name}
-                </p>
-              )}
-            </div>
-            <div className="mb-4">
-              <input
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-                id="email"
-                type="email"
-                placeholder="Email*"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-              {errors.email && (
-                <p className="text-red-500 text-xs xs:text-sm sm:text-base italic mt-2">
-                  {errors.email}
-                </p>
-              )}
-            </div>
-            <div className="mb-4">
-              <input
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-                id="phone"
-                type="text"
-                placeholder="Telefonnummer"
-                value={formData.phone}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-                id="address"
-                type="text"
-                placeholder="Adress"
-                value={formData.address}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-                id="subject"
-                type="text"
-                placeholder="Ämne"
-                value={formData.subject}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="mb-6">
-              <div className="relative">
-                <textarea
-                  className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline resize-none text-xs xs:text-sm sm:text-base"
-                  id="message"
-                  placeholder="Meddelande*"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="4"
-                  maxLength={500}
-                ></textarea>
-                <span className="absolute bottom-2 right-4 text-base text-gray-600">
-                  {remainingChars} / 500
-                </span>
-              </div>
-              {errors.message && (
-                <p className="text-red-500 text-base italic mt-2">
-                  {errors.message}
-                </p>
-              )}
-            </div>
-            <div className="flex py-8 items-center justify-between">
-              <button
-                className="bg-[#4a536e] hover:bg-[#636466] text-white font-bold py-3 mx-auto w-full rounded focus:outline-none focus:shadow-outline"
-                type="submit"
-              >
-                Skicka
-              </button>
-            </div>
+        <form
+  onSubmit={handleSubmit}
+  className="bg-[#81828531] px-4 lg:px-32 w-full pt-6 pb-8 mb-4"
+>
+  <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-[#4a536e] text-center py-3 lg:p-8">
+    Kontakt
+  </h2>
+  <div className="mb-4 relative">
+    <select
+      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
+      id="business_type"
+      value={formData.business_type}
+      onChange={handleChange}
+      required
+      onInvalid={(e) => e.target.setCustomValidity("Var god välj ett alternativ!")}
+      onInput={(e) => e.target.setCustomValidity("")}
+    >
+      <option className="text-xs xs:text-sm sm:text-base" value="" disabled>
+        Välj företagstyp
+      </option>
+      <option className="text-xs xs:text-sm sm:text-base" value="smallBusiness">
+        Litet företag
+      </option>
+      <option className="text-xs xs:text-sm sm:text-base" value="mediumBusiness">
+        Medelstort företag
+      </option>
+      <option className="text-xs xs:text-sm sm:text-base" value="enterprise">
+        Stort företag
+      </option>
+    </select>
+  </div>
+  <div className="mb-4">
+    <input
+      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
+      id="name"
+      type="text"
+      placeholder="Namn*"
+      value={formData.name}
+      onChange={handleChange}
+      required
+    />
+    {errors.name && (
+      <p className="text-red-500 text-xs xs:text-sm sm:text-base italic mt-2">
+        {errors.name}
+      </p>
+    )}
+  </div>
+  <div className="mb-4">
+    <input
+      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
+      id="email"
+      type="email"
+      placeholder="Email*"
+      value={formData.email}
+      onChange={handleChange}
+      required
+    />
+    {errors.email && (
+      <p className="text-red-500 text-xs xs:text-sm sm:text-base italic mt-2">
+        {errors.email}
+      </p>
+    )}
+  </div>
+  <div className="mb-4">
+    <input
+      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
+      id="phone"
+      type="text"
+      placeholder="Telefonnummer"
+      value={formData.phone}
+      onChange={handleChange}
+    />
+  </div>
+  <div className="mb-4">
+    <input
+      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
+      id="address"
+      type="text"
+      placeholder="Adress"
+      value={formData.address}
+      onChange={handleChange}
+    />
+  </div>
+  <div className="mb-4">
+    <input
+      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
+      id="subject"
+      type="text"
+      placeholder="Ämne"
+      value={formData.subject}
+      onChange={handleChange}
+    />
+  </div>
+  <div className="mb-6">
+    <div className="relative">
+      <textarea
+        className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline resize-none text-xs xs:text-sm sm:text-base"
+        id="message"
+        placeholder="Meddelande*" 
+        value={formData.message}
+        onChange={handleChange}
+        required
+        rows="4"
+        maxLength={500}
+        onInvalid={(e) => e.target.setCustomValidity("Var god fyll i det här fältet!")}
+        onInput={(e) => e.target.setCustomValidity("")}
+      ></textarea>
+      <span className="absolute bottom-2 right-4 text-base text-gray-600">
+        {remainingChars} / 500
+      </span>
+    </div>
+    {errors.message && (
+      <p className="text-red-500 text-base italic mt-2">
+        Var god fyll i det här fältet!
+      </p>
+    )}
+  </div>
+  <div className="flex py-8 items-center justify-between">
+    <button
+      className="bg-[#4a536e] hover:bg-[#636466] text-white font-bold py-3 mx-auto w-full rounded focus:outline-none focus:shadow-outline"
+      type="submit"
+    >
+      Skicka
+    </button>
+  </div>
 
-            <ToastContainer
-              position="top-center"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-            />
-          </form>
+  <ToastContainer
+    position="top-center"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+  />
+</form>
         </div>
       </div>
     </>

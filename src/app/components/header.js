@@ -49,8 +49,8 @@ export default function Header() {
 
   const links = [
     { href: "/", label: "Hem" },
-    { href: "/installationer", label: "Installationer" },
-    { href: "/underhall", label: "Underhåll" },
+    { href: "/installationer", label: "Installation" },
+    { href: "/underhall", label: "Service och underhåll" },
     { href: "/produkter", label: "Tillverkning och försäljning" },
     { href: "/om-oss", label: "Om oss" },
     { href: "/kontakt", label: "Kontakt" },

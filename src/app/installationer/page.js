@@ -24,7 +24,7 @@ const Installationer = () => {
       </Head>
       {/* First Section - Installationer */}
       <section className="flex md:flex-row flex-col p-12">
-        <div className=" bg-white md:w-6/12 w-full py-[3rem] relative ">
+        <div className=" bg-white md:w-6/12 w-full py-[1rem] relative ">
           <div
             className="absolute md:h-[16rem] -top-3 -left-8
               h-[13rem] md:w-[17rem] w-[15rem] border-[6px] border-[#4a536e] z-10"
@@ -33,7 +33,7 @@ const Installationer = () => {
           <div className="relative bg-white z-20 md:px-5">
             <div className=" flex flex-col ">
               <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e]">
-                Installationer
+                Installation
               </h2>
               <p className="mt-4 text-sm sm:text-base text-gray-600 font-semibold">
                 JGruppen driver och genomför ett växande antal referensprojekt, både i Norden och övriga Europa, för stora och internationellt välkända kunder. Detta är ett tydligt bevis på JGruppens status som en världsledande leverantör av produkter, tjänster och lösningar inom projekt som omfattar installation och integration av materialhanteringssystem.
@@ -41,16 +41,16 @@ const Installationer = () => {
               <p className="mt-4 text-sm sm:text-base text-gray-600">
                 Företagets grundare och VD, Christopher Jarl, lyfter fram flera faktorer bakom företagets framgång som en uppskattad och central partner för så många kunder. 'Det är inte bara jag som känner ett starkt engagemang för varje uppdrag vi får – det gäller alla våra medarbetare,' säger han. 'Vår personal är utan tvekan en ovärderlig tillgång. De besitter hög kompetens och strävar alltid efter att leverera bästa möjliga service, oavsett tid och plats.
               </p>
+              <br />
+              <p className="text-sm sm:text-base text-gray-600">
+              De följer alltid god industrised och arbetar enligt de rutiner och procedurer som fastställts i olika kvalitetsdokument. Detta återspeglas i ett noggrant dokumentationsarbete som pågår under hela projekttiden."
+            </p>
             </div>
           </div>
         </div>
 
-        <div className=" bg-white py-[3rem] md:w-6/12 w-full">
+        <div className=" bg-white  md:w-6/12 w-full">
           <div className=" flex flex-col md:px-8">
-            <p className="text-sm sm:text-base text-gray-600">
-              De följer alltid god industrised och arbetar enligt de rutiner och procedurer som fastställts i olika kvalitetsdokument. Detta återspeglas i ett noggrant dokumentationsarbete som pågår under hela projekttiden."
-            </p>
-
             <h3 className="text-xl sm:text-2xl font-bold text-[#4a536e]">
               Vi är stolta och tar ansvar
             </h3>

@@ -122,10 +122,10 @@ const Footer = () => {
               <h3 className="font-bold">E-post</h3>
             </div>
             <Link
-              href="mailto:support@jgruppen.com"
+              href="mailto:support@jgruppen.se"
               className="text-black hover:underline"
             >
-              support@jgruppen.com
+              support@jgruppen.se
             </Link>
           </div>
         </div>
@@ -138,12 +138,12 @@ const Footer = () => {
         {/* Quick Links */}
         <div className="w-full p-8 text-sm text-left md:border-l   flex items-start md:justify-center lg:border-gray-300">
           <div>
-            <h3 className="font-bold text-lg">Snabbalänkar</h3>
+            <h3 className="font-bold text-lg">Snabblänkar</h3>
             <ul className="flex flex-col space-y-2 mt-4">
               {[
                 { href: "/", label: "Hem" },
-                { href: "/installationer", label: "Installationer" },
-                { href: "/underhall", label: "Underhåll" },
+                { href: "/installationer", label: "Installation" },
+                { href: "/underhall", label: "Service och underhåll" },
                 { href: "/produkter", label: "Tillverkning och forsaljning" },
                 { href: "/om-oss", label: "Om oss" },
                 { href: "/kontakt", label: "Kontakt" },

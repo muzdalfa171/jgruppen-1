@@ -30,9 +30,12 @@ const Omoss = () => {
           <div className="relative bg-white z-20 md:px-5">
             <div className="flex flex-col">
               <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-[#4a536e]">En framgångssaga</h2>
-              <p className="mt-4 text-xs xs:text-sm sm:text-base text-gray-600 font-semibold">
-                Som en engagerad fristående extern entreprenör fick JCon allt fler uppdrag inom olika projekt åt stora internationella systembyggare och integrationsspecialister med hög kompetens.
-              </p>
+              <p className="mt-4 text-xs xs:text-sm sm:text-base text-gray-600">
+JGruppens historia börjar 2003, när VD Christopher Jarl
+                        bildade bolaget JCon i Motala, vid Vätterns östra
+                        strand. Detta bolag var från början inriktat på att
+                        utföra elektriska och mekaniska installations- och
+                        underhållsarbeten.              </p>
               <p className="mt-4 text-xs xs:text-sm sm:text-base text-gray-600">
                 Tack vare sitt rykte att kunna utföra kostnadseffektiva jobb, präglade av hög kvalitet, kompetenta yrkesmän och med leveranssäkerhet i högsätet, kunde JCon ta hem allt större uppdrag och började också öka sina åtaganden utanför Sverige.
               </p>

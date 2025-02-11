@@ -9,19 +9,22 @@ export default function Slideshow() {
       image: "/img/AdobeStock_379435239-2048x1365.jpeg",
       title: "JGruppen",
       subtitle: "Värdehöjande tjänster för optimerad drift",
-      buttonText: "Kontakta oss"
+      buttonText: "Kontakta oss",
+      link: "/kontakt"
     },
     {
       image: "/img/slide2.jpg", 
       title: "Underhållstjänster",
       subtitle: "Kontinuerlig driftoptimering",
-      buttonText: "Läs mer om underhåll"
+      buttonText: "Läs mer om underhåll",
+      link: "/underhall"
     },
     {
       image: "/img/slide3.jpg",
       title: "Specialiserad Utbildning", 
       subtitle: "Säkerhet och kompetensutveckling",
-      buttonText: "Utbildningsinformation"
+      buttonText: "Utbildningsinformation",
+      link: "https://jgruppen.se/om-oss"
     }
   ];
 
@@ -60,16 +63,19 @@ export default function Slideshow() {
         <p className="text-sm xs:text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center">
           {slides[currentSlide].subtitle}
         </p>
-        <button className="mt-3 sm:mt-6 px-4 py-1.5 sm:px-6 sm:py-2 md:px-8 md:py-3 border border-white text-white font-semibold hover:bg-[#4A536E] hover:text-white transition duration-300 text-xs xs:text-sm sm:text-base">
-          <Link href="/kontakt">{slides[currentSlide].buttonText}</Link>
-        </button>
+        <Link href={slides[currentSlide].link}>
+          <button className="mt-3 sm:mt-6 px-4 py-1.5 sm:px-6 sm:py-2 md:px-8 md:py-3 border border-white text-white font-semibold hover:bg-[#4A536E] hover:text-white transition duration-300 text-xs xs:text-sm sm:text-base">
+            {slides[currentSlide].buttonText}
+          </button>
+        </Link>
       </div>
 
       {/* Slideshow Controls - Arrows for larger screens */}
       <div className="hidden sm:block">
-        <div
+        <button
           className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer"
           onClick={prevImage}
+          aria-label="Previous slide"
         >
           <svg width="15" height="28" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -79,10 +85,11 @@ export default function Slideshow() {
               fill="none"
             />
           </svg>
-        </div>
-        <div
+        </button>
+        <button
           className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer"
           onClick={nextImage}
+          aria-label="Next slide"
         >
           <svg width="15" height="28" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -92,7 +99,7 @@ export default function Slideshow() {
               fill="none"
             />
           </svg>
-        </div>
+        </button>
       </div>
 
       {/* Slideshow Controls - Dots for mobile */}

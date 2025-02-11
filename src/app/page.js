@@ -47,7 +47,7 @@ export default function Home() {
                       <FaArrowRightLong className="text-lg sm:text-xl md:text-2xl shrink-0 transform group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
-                  <Link href="/produkter" className="group block">
+                  <Link href="/underhall" className="group block">
                     <div className="flex justify-between items-center bg-[#4a536e] hover:bg-[#3a435e] transition-colors duration-300 p-4 md:p-6 rounded-lg">
                       <div className="flex flex-col sm:flex-row items-center flex-1 min-w-0">
                         <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 shrink-0 mb-2 sm:mb-0">
@@ -106,19 +106,16 @@ export default function Home() {
                         underhållsarbeten.
                       </p>
                       <p className="mt-4 text-sm sm:text-base text-gray-600">
-                        Som fristående och engagerad extern entreprenör fick
-                        JCon allt fler uppdrag inom olika projekt åt stora
-                        internationella systembyggare och
-                        integrationsspecialister med hög kompetens. Tack vare
-                        sitt rykte för kostnadseffektiva jobb av hög kvalitet,
-                        utförda av kompetenta yrkesmän, med leveranssäkerhet i
-                        högsätet, kunde JCon ta hem allt större uppdrag och
-                        började också öka sina åtaganden utanför Sverige.
+                      Som en engagerad fristående extern entreprenör fick JCon allt fler uppdrag inom olika projekt åt stora internationella systembyggare och integrationsspecialister med hög kompetens.
+Tack vare sitt rykte att kunna utföra kostnadseffektiva jobb, präglade av hög kvalitet, kompetenta yrkesmän och med leveranssäkerhet i högsätet, kunde JCon ta hem allt större uppdrag och började också öka sina åtaganden utanför Sverige.
+
                       </p>
                     </div>
-                    <button className="px-[5rem] ml-[3.3rem] py-2 border border-gray-600 text-sm sm:text-base text-gray-600 font-semibold object-center hover:bg-[#4a536e] hover:text-white transition duration-300">
-                      Läs mer
-                    </button>
+                    <Link href="/om-oss">
+                      <button className="px-[5rem] ml-[3.3rem] py-2 border border-gray-600 text-sm sm:text-base text-gray-600 font-semibold object-center hover:bg-[#4a536e] hover:text-white transition duration-300">
+                        Läs mer
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -147,11 +144,12 @@ export default function Home() {
                     är dom vi är idag.
                   </p>
                 </div>
-                <button className="border-none bg-white text-center w-full flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base">
-                  Mekanisk installation
-                  <FaArrowRightLong />
-                  <Link href="/Mekaniskinstallation"></Link>
-                </button>
+                <Link href="/installationer">
+                  <button className="border-none bg-white text-center w-full flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base">
+                    Mekanisk installation
+                    <FaArrowRightLong />
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="bg-white text-center shadow">
@@ -173,11 +171,12 @@ export default function Home() {
                     anläggning.
                   </p>
                 </div>
-                <button className="border-none bg-white text-center w-full flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base">
-                  Elektrisk installation
-                  <FaArrowRightLong />
-                  <Link href="/Serviceochunderhåll"></Link>
-                </button>
+                <Link href="/installationer">
+                  <button className="border-none bg-white text-center w-full flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base">
+                    Elektrisk installation
+                    <FaArrowRightLong />
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="bg-white text-center shadow">
@@ -199,11 +198,12 @@ export default function Home() {
                   val för industriell installation, service, underhåll och
                   reparation.
                 </p>
-                <button className="border-none text-center bg-white w-full flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base">
-                  Service och underhåll
-                  <FaArrowRightLong />
-                  <Link href="/Serviceochunderhåll"></Link>
-                </button>
+                <Link href="/underhall">
+                  <button className="border-none text-center bg-white w-full flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base">
+                    Service och underhåll
+                    <FaArrowRightLong />
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="bg-white text-center shadow">
@@ -225,11 +225,12 @@ export default function Home() {
                   under lång tid garanterar att JGruppens kunder får sina behov
                   tillgodosedda med olika typer av komponenter och material.
                 </p>
-                <button className="border-none text-center w-full bg-white flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base">
-                  Tillverkning och försäljning
-                  <FaArrowRightLong />
-                  <Link href="/Tillverkningochförsäljning"></Link>
-                </button>
+                <Link href="/produkter">
+                  <button className="border-none text-center w-full bg-white flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base">
+                    Tillverkning och försäljning
+                    <FaArrowRightLong />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -247,14 +248,7 @@ export default function Home() {
               {/* Right Column - Paragraph */}
               <div className="w-full md:w-1/2 text-center px-8">
                 <p className="text-xs sm:text-sm md:text-base">
-                  JGruppen har sitt huvudkontor i Motala och antalet anställda
-                  är drygt 70 personer. En filial har öppnats i Oslo, Norge, och
-                  även om positionen på den svenska hemmamarknaden är fortsatt
-                  stark så baseras idag drygt 70% av omsättningen på uppdrag
-                  inom exportmarknaderna, i Finland, Danmark, Norge,
-                  Storbritannien, Spanien och Tyskland. Företaget är särskilt
-                  stolt över det faktum att alla medarbetare har den utbildning
-                  och behörighet som krävs för att uppfylla kundernas höga krav.
+                JGruppen har sitt huvudkontor i Motala, Östergötalnd. Antalet anställda är drygt 70 personer världen över. På senare tid har vi även filialer i Oslo, Norge och i GCC länderna. Även om positionen på den svenska hemmamarknaden är fortsatt stark så baseras idag drygt 70% av vår omsättning på uppdrag inom exportmarknaderna, EU, GCC, Norge, Schweiz och USA. Företaget är särskilt stolt över det faktum att alla medarbetare har den utbildning och behörighet som krävs för att uppfylla kundernas höga krav.
                 </p>
               </div>
             </div>
