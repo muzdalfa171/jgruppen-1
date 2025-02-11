@@ -13,9 +13,9 @@ const ContactPage = () => {
     <link rel="canonical" href="https://jgruppen.se/kontakt" key="canonical" />
     <meta
       name="description"
-      content="Get in touch with JGruppen for all your material handling and installation inquiries."
+      content="Kontakta JGruppen för alla dina materialhantering- och installationsfrågor."
     />
-    <meta name="keywords" content="kontakt, contact, JGruppen, installation" />
+    <meta name="keywords" content="kontakt, kontakta oss, JGruppen, installation" />
   </Head>;
 
   const [errors, setErrors] = useState({});
@@ -23,7 +23,7 @@ const ContactPage = () => {
   const [formData, setFormData] = useState({
     business_type: "",
     name: "",
-    email: "", 
+    email: "",
     phone: "",
     address: "",
     subject: "",
@@ -35,52 +35,41 @@ const ContactPage = () => {
     if (id === "message") {
       setRemainingChars(500 - value.length);
     }
-    setFormData({ ...formData, [id]: value });
+    setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const validateName = (name) => {
-    const nameRegex = /^[A-Za-z\s]{1,25}$/;
-    return nameRegex.test(name);
-  };
-
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
+  const validateName = (name) => /^[A-Za-z\s]{1,25}$/.test(name);
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let tempErrors = {};
+    const tempErrors = {};
 
+    // Validering
     if (!validateName(formData.name)) {
-      tempErrors.name = "Name should be max 25 letters and contain only alphabets.";
+      tempErrors.name = "Namnet får max innehålla 25 bokstäver och endast alfabetiska tecken.";
     }
-
     if (!validateEmail(formData.email)) {
-      tempErrors.email = "Invalid email format.";
+      tempErrors.email = "Ogiltig e-postadress.";
     }
-
     if (remainingChars < 0) {
-      tempErrors.message = "Message cannot exceed 500 characters.";
+      tempErrors.message = "Meddelandet får inte överstiga 500 tecken.";
+    }
+    if (!formData.message) {
+      tempErrors.message = "Var god fyll i det här fältet!";
     }
 
     if (Object.keys(tempErrors).length === 0) {
-      const userId = uuidv4();
       try {
         await addDoc(collection(db, "contactus"), {
-          user_id: userId,
-          business_type: formData.business_type,
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          address: formData.address,
-          subject: formData.subject,
-          message: formData.message,
+          user_id: uuidv4(),
+          ...formData,
           created_at: new Date(),
         });
 
-        toast.success(`Ditt mail har skickats`, {});
+        toast.success("Ditt meddelande har skickats");
 
+        // Återställ formulär
         setFormData({
           business_type: "",
           name: "",
@@ -92,165 +81,118 @@ const ContactPage = () => {
         });
         setRemainingChars(500);
       } catch (error) {
-        toast.error(
-          `Var god fyll i det här fältet!: ${error.message}`,
-        );
+        toast.error(`Ett fel uppstod: ${error.message}`);
       }
-    } else {
-      if (!formData.message) {
-        tempErrors.message = "Var god fyll i det här fältet!";
-      }
-     
     }
+    setErrors(tempErrors);
   };
 
   return (
-    <>
-      <div className="container w-full mx-auto">
-        <div className="lg:px-52 py-20 lg:mt-7 p-8 container w-full mx-auto">
-        <form
-  onSubmit={handleSubmit}
-  className="bg-[#81828531] px-4 lg:px-32 w-full pt-6 pb-8 mb-4"
->
-  <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-[#4a536e] text-center py-3 lg:p-8">
-    Kontakt
-  </h2>
-  <div className="mb-4 relative">
-    <select
-      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-      id="business_type"
-      value={formData.business_type}
-      onChange={handleChange}
-      required
-      onInvalid={(e) => e.target.setCustomValidity("Var god välj ett alternativ!")}
-      onInput={(e) => e.target.setCustomValidity("")}
-    >
-      <option className="text-xs xs:text-sm sm:text-base" value="" disabled>
-        Välj företagstyp
-      </option>
-      <option className="text-xs xs:text-sm sm:text-base" value="smallBusiness">
-        Litet företag
-      </option>
-      <option className="text-xs xs:text-sm sm:text-base" value="mediumBusiness">
-        Medelstort företag
-      </option>
-      <option className="text-xs xs:text-sm sm:text-base" value="enterprise">
-        Stort företag
-      </option>
-    </select>
-  </div>
-  <div className="mb-4">
-    <input
-      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-      id="name"
-      type="text"
-      placeholder="Namn*"
-      value={formData.name}
-      onChange={handleChange}
-      required
-    />
-    {errors.name && (
-      <p className="text-red-500 text-xs xs:text-sm sm:text-base italic mt-2">
-        {errors.name}
-      </p>
-    )}
-  </div>
-  <div className="mb-4">
-    <input
-      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-      id="email"
-      type="email"
-      placeholder="Email*"
-      value={formData.email}
-      onChange={handleChange}
-      required
-    />
-    {errors.email && (
-      <p className="text-red-500 text-xs xs:text-sm sm:text-base italic mt-2">
-        {errors.email}
-      </p>
-    )}
-  </div>
-  <div className="mb-4">
-    <input
-      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-      id="phone"
-      type="text"
-      placeholder="Telefonnummer"
-      value={formData.phone}
-      onChange={handleChange}
-    />
-  </div>
-  <div className="mb-4">
-    <input
-      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-      id="address"
-      type="text"
-      placeholder="Adress"
-      value={formData.address}
-      onChange={handleChange}
-    />
-  </div>
-  <div className="mb-4">
-    <input
-      className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline text-xs xs:text-sm sm:text-base"
-      id="subject"
-      type="text"
-      placeholder="Ämne"
-      value={formData.subject}
-      onChange={handleChange}
-    />
-  </div>
-  <div className="mb-6">
-    <div className="relative">
-      <textarea
-        className="hover:border-[#818285] border-2 rounded w-full py-4 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline resize-none text-xs xs:text-sm sm:text-base"
-        id="message"
-        placeholder="Meddelande*" 
-        value={formData.message}
-        onChange={handleChange}
-        required
-        rows="4"
-        maxLength={500}
-        onInvalid={(e) => e.target.setCustomValidity("Var god fyll i det här fältet!")}
-        onInput={(e) => e.target.setCustomValidity("")}
-      ></textarea>
-      <span className="absolute bottom-2 right-4 text-base text-gray-600">
-        {remainingChars} / 500
-      </span>
-    </div>
-    {errors.message && (
-      <p className="text-red-500 text-base italic mt-2">
-        Var god fyll i det här fältet!
-      </p>
-    )}
-  </div>
-  <div className="flex py-8 items-center justify-between">
-    <button
-      className="bg-[#4a536e] hover:bg-[#636466] text-white font-bold py-3 mx-auto w-full rounded focus:outline-none focus:shadow-outline"
-      type="submit"
-    >
-      Skicka
-    </button>
-  </div>
+    <div className="pt-10 md:pt-40 container w-full mx-auto">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg">
+          <form onSubmit={handleSubmit} className="p-8">
+            <h2 className="text-3xl font-bold text-[#4a536e] dark:text-[#8a93ae] text-center mb-8">
+              Kontakta oss
+            </h2>
 
-  <ToastContainer
-    position="top-center"
-    autoClose={5000}
-    hideProgressBar={false}
-    newestOnTop={false}
-    closeOnClick
-    rtl={false}
-    pauseOnFocusLoss
-    draggable
-    pauseOnHover
-  />
-</form>
+            <div className="space-y-6">
+              <div>
+                <label htmlFor="business_type" className="block text-sm font-medium text-[#4a536e] dark:text-[#8a93ae] mb-1">
+                  Företagstyp<span className="text-red-500">*</span>
+                </label>
+                <select
+                  className="w-full h-[3.4rem] px-4 py-3 rounded-lg border border-[#4a536e] dark:border-[#2a334e] bg-white dark:bg-gray-900 text-[#4a536e] dark:text-[#8a93ae] focus:ring-2 focus:ring-[#4a536e] dark:focus:ring-[#8a93ae] transition duration-200"
+                  id="business_type" 
+                  value={formData.business_type}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="" disabled>Välj företagstyp</option>
+                  <option value="smallBusiness">Litet företag</option>
+                  <option value="mediumBusiness">Medelstort företag</option>
+                  <option value="enterprise">Stort företag</option>
+                </select>
+              </div>
+
+              {["name", "email", "phone", "address", "subject"].map((field) => (
+                <div key={field}>
+                  <label htmlFor={field} className="block text-sm font-medium text-[#4a536e] dark:text-[#8a93ae] mb-1">
+                    {field === "name" ? "Namn" :
+                     field === "email" ? "E-post" :
+                     field === "phone" ? "Telefon" :
+                     field === "address" ? "Adress" :
+                     field === "subject" ? "Ämne" : field}
+                    {(field === "name" || field === "email") && <span className="text-red-500 ml-1">*</span>}
+                  </label>
+                  <input
+                    className="w-full px-4 py-3 rounded-lg border border-[#4a536e] dark:border-[#2a334e] bg-white dark:bg-gray-900 text-[#4a536e] dark:text-[#8a93ae] focus:ring-2 focus:ring-[#4a536e] dark:focus:ring-[#8a93ae] transition duration-200"
+                    id={field}
+                    type={field === "email" ? "email" : "text"}
+                    placeholder={field === "name" ? "Ditt namn" :
+                               field === "email" ? "Din e-post" :
+                               field === "phone" ? "Ditt telefonnummer" :
+                               field === "address" ? "Din adress" :
+                               field === "subject" ? "Ämne" : ""}
+                    value={formData[field]}
+                    onChange={handleChange}
+                    required={field === "name" || field === "email"}
+                  />
+                  {errors[field] && (
+                    <p className="mt-1 text-sm text-red-500">{errors[field]}</p>
+                  )}
+                </div>
+              ))}
+
+              <div>
+                <div className="relative">
+                  <label htmlFor="message" className="block text-sm font-medium text-[#4a536e] dark:text-[#8a93ae] mb-1">
+                    Meddelande<span className="text-red-500 ml-1">*</span>
+                  </label>
+                  <textarea
+                    className="w-full px-4 py-3 rounded-lg border border-[#4a536e] dark:border-[#2a334e] bg-white dark:bg-gray-900 text-[#4a536e] dark:text-[#8a93ae] focus:ring-2 focus:ring-[#4a536e] dark:focus:ring-[#8a93ae] transition duration-200 resize-none"
+                    id="message"
+                    placeholder="Skriv ditt meddelande här"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="4"
+                    maxLength={500}
+                  />
+                  <span className="absolute bottom-2 right-2 text-sm text-[#4a536e] dark:text-[#8a93ae]">
+                    {remainingChars} / 500
+                  </span>
+                </div>
+                {errors.message && (
+                  <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                )}
+              </div>
+
+              <button
+                className="w-full py-3 px-6 rounded-lg bg-[#4a536e] hover:bg-[#3a435e] dark:bg-[#2a334e] dark:hover:bg-[#1a233e] text-white font-semibold transition duration-200 transform hover:scale-[1.02]"
+                type="submit"
+              >
+                Skicka meddelande
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-    </>
+
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+    </div>
   );
 };
 
 export default ContactPage;
-

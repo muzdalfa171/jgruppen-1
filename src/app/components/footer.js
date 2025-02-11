@@ -12,8 +12,8 @@ import { FaWhatsapp } from "react-icons/fa6";
 import Image from "next/image";
 const Footer = () => {
   return (
-    <footer className="bg-gray-100  lg:py-8">
-      <div className="flex md:flex-row flex-col justify-around ">
+    <footer className="bg-gray-100 dark:bg-gray-900 lg:py-8">
+      <div className="flex md:flex-row flex-col justify-around">
         {/* Logo Section */}
         <div className="w-full flex flex-col md:items-center items-start p-8">
           <Image
@@ -71,31 +71,27 @@ const Footer = () => {
               className="rounded-full p-1 hover:opacity-80"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path fill="#000000" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                <path fill="#000000" className="dark:fill-white" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </Link>
           </div>
         </div>
 
-
-
-
-
         {/* Company Details */}
-        <div className="w-full p-8 md:border-l  border-gray-300 md:text-md text-sm flex items-start lg:justify-center lg:text-center flex-col lg:ps-28">
-          <h3 className="font-bold text-lg">JGruppen AB</h3>
+        <div className="w-full p-8 md:border-l border-gray-300 dark:border-gray-700 md:text-md text-sm flex items-start lg:justify-center lg:text-center flex-col lg:ps-28">
+          <h3 className="font-bold text-lg dark:text-white">JGruppen AB</h3>
 
           {/* Besöksadress Section with Icon */}
           <div className="mt-4">
-            <div className="flex items-center ">
-              <FaMapLocationDot className="mr-2" />
-              <h3 className="font-bold">Besöksadress</h3>
+            <div className="flex items-center">
+              <FaMapLocationDot className="mr-2 dark:text-white" />
+              <h3 className="font-bold dark:text-white">Besöksadress</h3>
             </div>
             <Link
               href="https://maps.app.goo.gl/ZnU1ntEBGx6oqK6J8"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black hover:underline"
+              className="text-black dark:text-gray-300 hover:underline"
             >
               <p className="text-left">Smedsby Industriområde, 591 96 Motala</p>
             </Link>
@@ -103,13 +99,13 @@ const Footer = () => {
 
           {/* Telefon Section with Icon */}
           <div className="mt-4">
-            <div className="flex items-center ">
-              <MdPhone className="mr-2" />
-              <h3 className="font-bold">Telefon</h3>
+            <div className="flex items-center">
+              <MdPhone className="mr-2 dark:text-white" />
+              <h3 className="font-bold dark:text-white">Telefon</h3>
             </div>
             <Link
               href="tel:+46141215044"
-              className="text-black hover:underline"
+              className="text-black dark:text-gray-300 hover:underline"
             >
               0141-21 50 44
             </Link>
@@ -117,28 +113,23 @@ const Footer = () => {
 
           {/* Email Section with Icon */}
           <div className="mt-4">
-            <div className="flex items-center ">
-              <MdEmail className="mr-2" />
-              <h3 className="font-bold">E-post</h3>
+            <div className="flex items-center">
+              <MdEmail className="mr-2 dark:text-white" />
+              <h3 className="font-bold dark:text-white">E-post</h3>
             </div>
             <Link
               href="mailto:support@jgruppen.se"
-              className="text-black hover:underline"
+              className="text-black dark:text-gray-300 hover:underline"
             >
               support@jgruppen.se
             </Link>
           </div>
         </div>
 
-
-
-
-
-
         {/* Quick Links */}
-        <div className="w-full p-8 text-sm text-left md:border-l   flex items-start md:justify-center lg:border-gray-300">
+        <div className="w-full p-8 text-sm text-left md:border-l flex items-start md:justify-center lg:border-gray-300 dark:lg:border-gray-700">
           <div>
-            <h3 className="font-bold text-lg">Snabblänkar</h3>
+            <h3 className="font-bold text-lg dark:text-white">Snabblänkar</h3>
             <ul className="flex flex-col space-y-2 mt-4">
               {[
                 { href: "/", label: "Hem" },
@@ -150,8 +141,8 @@ const Footer = () => {
                 { href: "/jobba-med-oss", label: "Jobba med oss" },
               ].map((item) => (
                 <li key={item.href} className="flex items-center">
-                  <RiArrowDropRightLine />
-                  <Link href={item.href} className="ml-2">
+                  <RiArrowDropRightLine className="dark:text-white" />
+                  <Link href={item.href} className="ml-2 dark:text-gray-300">
                     {item.label}
                   </Link>
                 </li>
@@ -160,17 +151,9 @@ const Footer = () => {
           </div>
         </div>
 
-
-
       </div>
     </footer>
   );
 };
 
 export default Footer;
-
-
-
-
-
-
