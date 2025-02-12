@@ -27,7 +27,7 @@ const Installationer = () => {
           <div className="relative bg-white dark:bg-gray-900 z-20 p-2 sm:px-5">
             <div className="flex flex-col">
               <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae]">
-                Installation
+              Installation
               </h2>
               <h4 className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-300 font-semibold">
                 JGruppen driver och genomför ett växande antal referensprojekt, både i Norden och övriga Europa, för stora och internationellt välkända kunder. Detta är ett tydligt bevis på JGruppens status som en världsledande leverantör av produkter, tjänster och lösningar inom projekt som omfattar installation och integration av materialhanteringssystem.
@@ -44,8 +44,8 @@ const Installationer = () => {
 
         <div className="bg-white dark:bg-gray-900 sm:py-[3rem] p-2 sm:w-6/12 w-full">
           <div className="flex flex-col md:px-8">
-            <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae]">
-              Vi är stolta och tar ansvar
+          <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae]">
+          Vi är stolta och tar ansvar
             </h2>
             <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
               Oavsett om det handlar om att driftsätta en obemannad kran, installera en transportör och ett pakethanteringssystem eller integrera en helt automatiserad bearbetningslinje, besitter JGruppens medarbetare den elektriska, mekaniska och svetstekniska expertis som krävs för att få jobbet gjort.

@@ -85,7 +85,7 @@ const Footer = () => {
           <div className="mt-4">
             <div className="flex items-center">
               <FaMapLocationDot className="mr-2 dark:text-white text-sm" />
-              <h3 className="font-bold text-xs sm:text-sm dark:text-white">Besöksadress</h3>
+              <h4 className="font-bold text-xs sm:text-sm dark:text-white">Besöksadress</h4>
             </div>
             <Link
               href="https://maps.app.goo.gl/ZnU1ntEBGx6oqK6J8"
@@ -93,7 +93,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-black dark:text-gray-300 hover:underline text-xs sm:text-sm"
             >
-              <p>Smedsby Industriområde, 591 96 Motala</p>
+              <p className="text-xs sm:text-sm">Smedsby Industriområde, 591 96 Motala</p>
             </Link>
           </div>
 
@@ -101,7 +101,7 @@ const Footer = () => {
           <div className="mt-4">
             <div className="flex items-center">
               <MdPhone className="mr-2 dark:text-white text-sm" />
-              <h3 className="font-bold text-xs sm:text-sm dark:text-white">Telefon</h3>
+              <h4 className="font-bold text-xs sm:text-sm dark:text-white">Telefon</h4>
             </div>
             <Link
               href="tel:+46141215044"
@@ -115,13 +115,13 @@ const Footer = () => {
           <div className="mt-4">
             <div className="flex items-center">
               <MdEmail className="mr-2 dark:text-white text-sm" />
-              <h3 className="font-bold text-xs sm:text-sm dark:text-white">E-post</h3>
+              <h4 className="font-bold text-xs sm:text-sm dark:text-white">E-post</h4>
             </div>
             <Link
-              href="mailto:support@jgruppen.se"
+              href="mailto:info@jgruppen.se"
               className="text-black dark:text-gray-300 hover:underline text-xs sm:text-sm"
             >
-              support@jgruppen.se
+              info@jgruppen.se
             </Link>
           </div>
         </div>

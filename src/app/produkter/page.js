@@ -33,25 +33,25 @@ const Produkter = () => {
 
           <div className="relative bg-white dark:bg-gray-900 z-20 pl-3 md:px-5">
             <div className="flex flex-col">
-              <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae]">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae]">
                 Tillverkning och försäljning
               </h2>
-              <p className="mt-3 sm:mt-4 text-xs xs:text-sm sm:text-base text-gray-600 dark:text-gray-300 font-semibold">
+              <h4 className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-300 font-semibold">
                 Flexibla och reaktionssnabba partnerskap med noggrant utvalda
                 underleverantörer som JGruppens dotterbolag samarbetat med
                 under lång tid garanterar att JGruppens kunder får sina behov
                 tillgodosedda med olika typer av komponenter och material.
-              </p>
-              <p className="mt-3 sm:mt-4 text-xs xs:text-sm sm:text-base text-gray-600 dark:text-gray-400">
+              </h4>
+              <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
                 Detta gäller även detaljer som är svåra att få tag på, finns i
                 begränsat antal eller har slutat tillverkas.
               </p>
-              <p className="mt-3 sm:mt-4 text-xs xs:text-sm sm:text-base text-gray-600 dark:text-gray-400">
+              <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
                 Med andra ord, vi kan tillfredställa våra kunders behov av allt från perifera
                 inventarier till centrala anläggningskomponenter, såväl som
                 unika konstruktioner och specialbyggen.
               </p>
-              <p className="mt-3 sm:mt-4 text-xs xs:text-sm sm:text-base text-gray-600 dark:text-gray-400">
+              <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
                 Vi har en väl utbyggd serviceverksamhet där vi under årens
                 lopp byggt upp stor kunskap kring pallkranar och
                 miniloadkranar, conveyorsystem, robotar och

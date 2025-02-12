@@ -1,14 +1,11 @@
 "use client";
 import Head from "next/head";
-import Header from "./components/header";
-import Footer from "./components/footer";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Slideshow from "./components/slidershow";
-import { H2, H4 } from '../components/Rubriker'
-
+import Card from "./components/card";
 export default function Home() {
   return (
     <div className="container w-full mx-auto">
@@ -124,118 +121,9 @@ Tack vare sitt rykte att kunna utföra kostnadseffektiva jobb, präglade av hög
           </div>
         </>
         {/* Image Grid Section */}
-        <>
-          <div className="grid grid-col md:grid-cols-2 mb-14 gap-16 mx-10 xl:grid-cols-4 mt-8">
-            <div className="bg-white dark:bg-gray-900 text-center shadow">
-              <Image
-                src="/img/category1.jpg"
-                width={500}
-                height={300}
-                alt="Mekanisk installation"
-              />
-              <div className="bg-[#f0f1f5] dark:bg-gray-800">
-                <div>
-                  <div className="bg-[#4a536e] dark:bg-[#2a334e] py-2 text-white">
-                    <h3 className="text-sm sm:text-base font-bold">Mekanisk installation</h3>
-                  </div>
-                  <p className="mt-2 mx-6 md:px-4 pt-3 min-h-[10.3rem] text-xs sm:text-sm  text-gray-600 dark:text-gray-300">
-                    Företaget har sin grund inom installation av
-                    materialhanteringssystem. Vi har sedan dess fortsatt fylla
-                    behovet hos våra kunder och det är det som har gjort att vi
-                    är dom vi är idag.
-                  </p>
-                </div>
-                <Link href="/installationer">
-                  <button className="border-none bg-white dark:bg-gray-900 text-center w-full flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base dark:text-gray-300">
-                    Mekanisk installation
-                    <FaArrowRightLong />
-                  </button>
-                </Link>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-gray-900 text-center shadow">
-              <Image
-                src="/img/category2.jpg"
-                width={500}
-                height={300}
-                alt="Mekanisk installation"
-              />
-              <div className="bg-[#f0f1f5] dark:bg-gray-800">
-                <div>
-                  <div className="bg-[#4a536e] dark:bg-[#2a334e] py-2 text-white">
-                    <h3 className="text-sm sm:text-base font-bold">Elektrisk installation</h3>
-                  </div>
-                  <p className="mt-2 px-4 pt-3 min-h-[10.3rem] text-xs sm:text-sm text-gray-600 dark:text-gray-300">
-                    JGruppen har en avdelning med elektriker som är certifierade
-                    för maskininstallationer. Vi erbjuder allt från
-                    installationer till felsökningar och reparationer på er
-                    anläggning.
-                  </p>
-                </div>
-                <Link href="/installationer">
-                  <button className="border-none bg-white dark:bg-gray-900 text-center w-full flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base dark:text-gray-300">
-                    Elektrisk installation
-                    <FaArrowRightLong />
-                  </button>
-                </Link>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-gray-900 text-center shadow">
-              <Image
-                src="/img/category3.jpg"
-                width={500}
-                height={300}
-                alt="Service och underhåll"
-              />
-              <div className="bg-[#f0f1f5] dark:bg-gray-800">
-                <div className="bg-[#4a536e] dark:bg-[#2a334e]">
-                  <h3 className="bg-[#4a536e] dark:bg-[#2a334e] py-2 text-white text-sm sm:text-base">
-                    Service och underhåll
-                  </h3>
-                </div>
-                <p className="mt-2 px-4 pt-3 min-h-[10.3rem] text-xs sm:text-sm text-gray-600 dark:text-gray-300">
-                  Allmänt erkänt som ett av landets ledande företag inom sin
-                  bransch, har JGruppen vuxit fram och blivit regionens första
-                  val för industriell installation, service, underhåll och
-                  reparation.
-                </p>
-                <Link href="/underhall">
-                  <button className="border-none text-center bg-white dark:bg-gray-900 w-full flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base dark:text-gray-300">
-                    Service och underhåll
-                    <FaArrowRightLong />
-                  </button>
-                </Link>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-gray-900 text-center shadow">
-              <Image
-                src="/img/category4.jpg"
-                width={500}
-                height={300}
-                alt="Tillverkning och försäljning"
-              />
-              <div className="bg-[#f0f1f5] dark:bg-gray-800">
-                <div className="bg-[#4a536e] dark:bg-[#2a334e]">
-                  <h3 className="bg-[#4a536e] dark:bg-[#2a334e] py-2 text-white text-sm sm:text-base">
-                    Tillverkning och försäljning
-                  </h3>
-                </div>
-                <p className="mt-2 px-4 pt-3 min-h-[10.3rem] text-xs sm:text-sm text-gray-600 dark:text-gray-300">
-                  Flexibla och reaktionssnabba partnerskap med noggrant utvalda
-                  underleverantörer som JGruppens dotterbolag samarbetat med
-                  under lång tid garanterar att JGruppens kunder får sina behov
-                  tillgodosedda med olika typer av komponenter och material.
-                </p>
-                <Link href="/produkter">
-                  <button className="border-none text-center w-full bg-white dark:bg-gray-900 flex items-center gap-4 justify justify-center flex-row mt-8 p-4 text-sm sm:text-base dark:text-gray-300">
-                    Tillverkning och försäljning
-                    <FaArrowRightLong />
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </>
+        <div className="flex flex-row">
+          <Card />
+        </div>
         {/* Categories Section */}
        
         <section className="gap-8 w-full ">

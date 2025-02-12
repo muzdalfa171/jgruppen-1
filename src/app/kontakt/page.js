@@ -65,9 +65,10 @@ const ContactPage = () => {
       <div className="max-w-2xl mx-auto px-4 py-8">
         <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg">
           <form onSubmit={handleSubmit} className="p-4">
-            <h2 className="text-xl font-bold text-[#4a536e] dark:text-[#8a93ae] text-center mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae] text-center mb-4">
               Kontakta oss
             </h2>
+
 
             <div className="space-y-3">
               <div>

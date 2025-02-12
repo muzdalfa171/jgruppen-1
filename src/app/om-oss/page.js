@@ -29,8 +29,8 @@ const Omoss = () => {
 
           <div className="relative bg-white dark:bg-gray-900 z-20 pl-3 md:px-5">
             <div className="flex flex-col">
-              <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae]">
-                En framgångssaga
+            <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae]">
+            En framgångssaga
               </h2>
               <h4 className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-300 font-semibold">
                 JGruppens historia börjar 2003, när VD Christopher Jarl
@@ -39,7 +39,7 @@ const Omoss = () => {
                 utföra elektriska och mekaniska installations- och
                 underhållsarbeten.
               </h4>
-              <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3">
+              <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
                 Tack vare sitt rykte att kunna utföra kostnadseffektiva jobb, präglade av hög kvalitet, kompetenta yrkesmän och med leveranssäkerhet i högsätet, kunde JCon ta hem allt större uppdrag och började också öka sina åtaganden utanför Sverige.
               </p>
             </div>
@@ -48,14 +48,16 @@ const Omoss = () => {
 
         <div className="bg-white dark:bg-gray-900 py-[2rem] sm:py-[3rem] md:w-6/12 w-full">
           <div className="flex flex-col px-4 md:px-8">
-            <h3 className="text-lg sm:text-xl font-bold text-[#4a536e] dark:text-[#8a93ae]">Utveckling</h3>
-            <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-              För att bemöta aktuella krav från våra kunder, inledde Christopher Jarl en omorganisation för att skapa en ny struktur som var bättre anpassad för framtida krav på en dynamisk marknad. Detta ledde till bildandet av JGruppen AB. Sedan dess har företaget fortsatt att växa och bredda sitt utbud av produkter och tjänster. Närvaron har förstärkts på nya och befintliga exportmarknader världen över.
+          <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae]">
+          Utveckling
+          </h2>
+          <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
+            För att bemöta aktuella krav från våra kunder, inledde Christopher Jarl en omorganisation för att skapa en ny struktur som var bättre anpassad för framtida krav på en dynamisk marknad. Detta ledde till bildandet av JGruppen AB. Sedan dess har företaget fortsatt att växa och bredda sitt utbud av produkter och tjänster. Närvaron har förstärkts på nya och befintliga exportmarknader världen över.
             </p>
 
-            <h3 className="text-lg sm:text-xl font-bold text-[#4a536e] dark:text-[#8a93ae] mt-6">Stolthet</h3>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#4a536e] dark:text-[#8a93ae] mt-6">Stolthet</h2>
             <p className="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-              JGruppen har sitt huvudkontor i Motala, Östergötalnd. Antalet anställda är drygt 70 personer världen över. På senare tid har vi även filialer i Oslo, Norge och i GCC länderna. Även om positionen på den svenska hemmamarknaden är fortsatt stark så baseras idag drygt 70% av vår omsättning på uppdrag inom exportmarknaderna, EU, GCC, Norge, Schweiz och USA. Företaget är särskilt stolt över det faktum att alla medarbetare har den utbildning och behörighet som krävs för att uppfylla kundernas höga krav.
+            JGruppen har sitt huvudkontor i Motala, Östergötalnd. Antalet anställda är drygt 70 personer världen över. På senare tid har vi även filialer i Oslo, Norge och i GCC länderna. Även om positionen på den svenska hemmamarknaden är fortsatt stark så baseras idag drygt 70% av vår omsättning på uppdrag inom exportmarknaderna, EU, GCC, Norge, Schweiz och USA. Företaget är särskilt stolt över det faktum att alla medarbetare har den utbildning och behörighet som krävs för att uppfylla kundernas höga krav.
             </p>
           </div>
         </div>
