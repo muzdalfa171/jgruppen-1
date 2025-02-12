@@ -78,34 +78,34 @@ const Footer = () => {
         </div>
 
         {/* Company Details */}
-        <div className="w-full p-8 md:border-l border-gray-300 dark:border-gray-700 md:text-md text-sm flex items-start lg:justify-center lg:text-center flex-col lg:ps-28">
-          <h3 className="font-bold text-lg dark:text-white">JGruppen AB</h3>
+        <div className="w-full p-8 md:border-l border-gray-300 dark:border-gray-700 text-xs sm:text-sm flex items-start lg:justify-center flex-col">
+          <h3 className="font-bold text-sm sm:text-base dark:text-white">JGruppen AB</h3>
 
           {/* Besöksadress Section with Icon */}
           <div className="mt-4">
             <div className="flex items-center">
-              <FaMapLocationDot className="mr-2 dark:text-white" />
-              <h3 className="font-bold dark:text-white">Besöksadress</h3>
+              <FaMapLocationDot className="mr-2 dark:text-white text-sm" />
+              <h3 className="font-bold text-xs sm:text-sm dark:text-white">Besöksadress</h3>
             </div>
             <Link
               href="https://maps.app.goo.gl/ZnU1ntEBGx6oqK6J8"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black dark:text-gray-300 hover:underline"
+              className="text-black dark:text-gray-300 hover:underline text-xs sm:text-sm"
             >
-              <p className="text-left">Smedsby Industriområde, 591 96 Motala</p>
+              <p>Smedsby Industriområde, 591 96 Motala</p>
             </Link>
           </div>
 
           {/* Telefon Section with Icon */}
           <div className="mt-4">
             <div className="flex items-center">
-              <MdPhone className="mr-2 dark:text-white" />
-              <h3 className="font-bold dark:text-white">Telefon</h3>
+              <MdPhone className="mr-2 dark:text-white text-sm" />
+              <h3 className="font-bold text-xs sm:text-sm dark:text-white">Telefon</h3>
             </div>
             <Link
               href="tel:+46141215044"
-              className="text-black dark:text-gray-300 hover:underline"
+              className="text-black dark:text-gray-300 hover:underline text-xs sm:text-sm"
             >
               0141-21 50 44
             </Link>
@@ -114,12 +114,12 @@ const Footer = () => {
           {/* Email Section with Icon */}
           <div className="mt-4">
             <div className="flex items-center">
-              <MdEmail className="mr-2 dark:text-white" />
-              <h3 className="font-bold dark:text-white">E-post</h3>
+              <MdEmail className="mr-2 dark:text-white text-sm" />
+              <h3 className="font-bold text-xs sm:text-sm dark:text-white">E-post</h3>
             </div>
             <Link
               href="mailto:support@jgruppen.se"
-              className="text-black dark:text-gray-300 hover:underline"
+              className="text-black dark:text-gray-300 hover:underline text-xs sm:text-sm"
             >
               support@jgruppen.se
             </Link>
