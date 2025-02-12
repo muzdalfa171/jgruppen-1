@@ -3,8 +3,20 @@
 @tailwind utilities;
 
 :root {
+  /* Color variables */
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Font sizes */
+  --font-size-title: 2.5rem;    /* 40px */
+  --font-size-heading: 1.875rem;/* 30px */
+  --font-size-subheading: 1.5rem;/* 24px */
+  --font-size-paragraph: 1rem;  /* 16px */
+  --font-size-small: 0.875rem;  /* 14px */
+  
+  /* Line heights */
+  --line-height-title: 1.2;
+  --line-height-text: 1.6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,11 +25,33 @@
     --foreground: #ededed;
   }
 }
+
+/* Base element styling */
+h1 {
+  font-size: var(--font-size-title);
+  line-height: var(--line-height-title);
+}
+
+h2 {
+  font-size: var(--font-size-heading);
+  line-height: var(--line-height-title);
+}
+
+h3 {
+  font-size: var(--font-size-subheading);
+}
+
+p {
+  font-size: var(--font-size-paragraph);
+  line-height: var(--line-height-text);
+}
+
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -28,7 +62,11 @@ body {
   /* .text-balance {
      text-wrap: balance; 
   } */
+  .small-text {
+    font-size: var(--font-size-small);
+  }
 }
+
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -54,4 +92,3 @@ body {
 .animate-slideInOut {
   animation: slideIn 0.5s ease-out forwards, slideOut 0.5s ease-in 2.5s forwards;
 }
-
