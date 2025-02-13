@@ -15,9 +15,30 @@ const links = [
   { href: "/jobba-med-oss", label: "Jobba med oss" },
 ];
 
+const ToggleSwitch = ({ isEnglish, setIsEnglish }) => {
+  return (
+    <div 
+      className="flex items-center w-20 h-8 rounded-full p-1 cursor-pointer transition-colors text-[#4A536E] relative"
+      onClick={() => setIsEnglish(!isEnglish)}
+    >
+      <div className="absolute inset-0 rounded-full transition-colors bg-gray-200"></div>
+      <div className="z-10 flex justify-between items-center w-full px-2 text-sm font-bold">
+        <span>EN</span>
+        <span>SV</span>
+      </div>
+      <div 
+        className={`absolute left-1 w-10 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 ${
+          isEnglish ? 'translate-x-0' : 'translate-x-9'
+        }`}
+      ></div>
+    </div>
+  );
+};
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isEnglish, setIsEnglish] = useState(false);
   const pathname = usePathname();
   const headerRef = useRef(null);
   const scrollTimeout = useRef();
@@ -58,6 +79,11 @@ export default function Header() {
     [pathname, isScrolled]
   );
 
+  const textColor = useMemo(() => 
+    pathname === "/" && !isScrolled ? "text-white" : "text-[#4A536E]",
+    [pathname, isScrolled]
+  );
+
   return (
     <header
       ref={headerRef}
@@ -92,21 +118,51 @@ export default function Header() {
               </span>
             </Link>
           ))}
+          <div className="ml-4">
+            <ToggleSwitch 
+              isEnglish={isEnglish} 
+              setIsEnglish={setIsEnglish}
+            />
+          </div>
         </nav>
 
         <button 
-          className="block lg:hidden p-2" 
+          className={`block lg:hidden p-3 rounded-lg transition-all duration-300 hover:bg-opacity-10 ${
+            menuOpen 
+              ? "bg-black/50" 
+              : "hover:bg-gray-200 dark:hover:bg-gray-600"
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
           <svg
-            width="24"
-            height="24"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
             fill="none"
-            stroke="currentColor"
-            className={`w-5 sm:w-6 h-5 sm:h-6 ${menuButtonColor}`}
+            className={`w-6 sm:w-7 h-6 sm:h-7 ${menuButtonColor} transition-colors duration-300`}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+            <path
+              d="M4 6H20"
+              className={`transition-all duration-300 ${menuOpen ? "translate-y-1.5 rotate-45" : ""}`}
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M4 12H20"
+              className={`transition-opacity duration-200 ${menuOpen ? "opacity-0" : "opacity-100"}`}
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M4 18H20"
+              className={`transition-all duration-300 ${menuOpen ? "-translate-y-1.5 -rotate-45" : ""}`}
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
           </svg>
         </button>
       </div>
@@ -120,6 +176,12 @@ export default function Header() {
               </span>
             </Link>
           ))}
+          <div className="flex justify-center mt-4">
+            <ToggleSwitch 
+              isEnglish={isEnglish} 
+              setIsEnglish={setIsEnglish}
+            />
+          </div>
         </nav>
       )}
     </header>
