@@ -1,116 +1,116 @@
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
-export async function POST(req) {
+export async function POST(request: NextRequest) {
   try {
-    const data = await req.json();
-    
+    // Parse incoming JSON
+    const { formData } = await request.json();
+    if (!formData) {
+      return NextResponse.json({ error: "No formData provided" }, { status: 400 });
+    }
+
+    const { email, name, phone, address, subject, message, business_type } = formData;
+    console.log("Received formData:", formData);
+
+    // Check environment variables
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      return NextResponse.json(
+        { error: "Missing EMAIL_USER or EMAIL_PASS in environment" },
+        { status: 500 }
+      );
+    }
+
+    // Create transporter with Gmail service
     const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
+      service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
+        user: process.env.EMAIL_USER, // e.g. "wazirmk67@gmail.com"
+        pass: process.env.EMAIL_PASS, // your 16-char app password with NO SPACES
+      },
     });
 
+    // Construct email
     const mailOptions = {
-      from: data.email,
-      to: 'info@jgruppen.se',
-      subject: `Contact Form Message from ${data.name}`,
-      text: `
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone}
-Message: ${data.message}
-      `,
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: subject || "Ny förfrågan från JGruppen webbplats",
       html: `
-        <div style="
-          max-width: 600px;
-          margin: 0 auto;
-          padding: 20px;
-          font-family: Arial, sans-serif;
-          background-color: #f9f9f9;
-          border-radius: 10px;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        ">
-          <div style="
-            background-color: #4A536E;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 5px 5px 0 0;
-          ">
-            <h2 style="margin: 0;">New Contact Form Message</h2>
-          </div>
-          
-          <div style="padding: 20px; background-color: white; border-radius: 0 0 5px 5px;">
-            <div style="margin-bottom: 15px;">
-              <label style="font-weight: bold; color: #4A536E;">Name:</label>
-              <div style="
-                padding: 10px;
-                background-color: #f5f5f5;
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+              }
+              .header {
+                background-color: #f8f9fa;
+                padding: 15px;
                 border-radius: 5px;
-                margin-top: 5px;
-              ">${data.name}</div>
-            </div>
-            
-            <div style="margin-bottom: 15px;">
-              <label style="font-weight: bold; color: #4A536E;">Email:</label>
-              <div style="
-                padding: 10px;
-                background-color: #f5f5f5;
+                margin-bottom: 20px;
+              }
+              .content {
+                background-color: #ffffff;
+                padding: 20px;
                 border-radius: 5px;
-                margin-top: 5px;
-              ">${data.email}</div>
+                border: 1px solid #e9ecef;
+              }
+              .field {
+                margin-bottom: 15px;
+              }
+              .label {
+                font-weight: bold;
+                color: #495057;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="header">
+              <h2 style="margin:0;color:#1a73e8;">Ny Kontaktförfrågan - JGruppen</h2>
             </div>
-            
-            <div style="margin-bottom: 15px;">
-              <label style="font-weight: bold; color: #4A536E;">Phone:</label>
-              <div style="
-                padding: 10px;
-                background-color: #f5f5f5;
-                border-radius: 5px;
-                margin-top: 5px;
-              ">${data.phone}</div>
+            <div class="content">
+              <div class="field">
+                <span class="label">Företagstyp:</span> ${business_type || "Ej angivet"}
+              </div>
+              <div class="field">
+                <span class="label">Namn:</span> ${name || "Ej angivet"}
+              </div>
+              <div class="field">
+                <span class="label">E-post:</span> ${email || "Ej angivet"}
+              </div>
+              <div class="field">
+                <span class="label">Telefon:</span> ${phone || "Ej angivet"}
+              </div>
+              <div class="field">
+                <span class="label">Adress:</span> ${address || "Ej angivet"}
+              </div>
+              <div class="field">
+                <span class="label">Ämne:</span> ${subject || "Ej angivet"}
+              </div>
+              <div class="field">
+                <span class="label">Meddelande:</span>
+                <div style="margin-top:10px;white-space:pre-wrap;">${message || "Inget meddelande"}</div>
+              </div>
             </div>
-            
-            <div style="margin-bottom: 15px;">
-              <label style="font-weight: bold; color: #4A536E;">Message:</label>
-              <div style="
-                padding: 10px;
-                background-color: #f5f5f5;
-                border-radius: 5px;
-                margin-top: 5px;
-                white-space: pre-wrap;
-              ">${data.message}</div>
-            </div>
-          </div>
-          
-          <div style="
-            text-align: center;
-            padding-top: 20px;
-            color: #666;
-            font-size: 12px;
-          ">
-            <p>This is an automated message from your website contact form.</p>
-          </div>
-        </div>
-      `
+          </body>
+        </html>
+      `,
     };
 
-    await transporter.sendMail(mailOptions);
+    // Send email
+    const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent successfully:", info);
 
-    return NextResponse.json(
-      { message: 'Email sent successfully' },
-      { status: 200 }
-    );
-
+    return NextResponse.json({ success: true, info }, { status: 200 });
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error("Error in /api/SendMail:", error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: "Internal Server Error", detail: error.message },
       { status: 500 }
     );
   }

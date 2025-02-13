@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
+import axios from "axios";
 
 const ContactPage = () => {
   const [errors, setErrors] = useState({});
@@ -60,15 +61,11 @@ const ContactPage = () => {
 
     if (Object.keys(tempErrors).length === 0) {
       try {
-        const response = await fetch('/api/SendMail', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
+        const response = await axios.post('/api/SendMail', {
+          formData: formData
         });
 
-        if (response.ok) {
+        if (response.status === 200) {
           toast.success("Ditt meddelande har skickats!");
           setFormData({
             business_type: "",
