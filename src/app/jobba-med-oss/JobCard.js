@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { motion } from 'framer-motion';
 import { FiLinkedin, FiMail, FiArrowRight } from 'react-icons/fi';
 

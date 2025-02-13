@@ -9,7 +9,7 @@ import { SlSocialTwitter } from "react-icons/sl";
 import { TiSocialFacebook } from "react-icons/ti";
 import { TbBrandTelegram } from "react-icons/tb";
 import { FaWhatsapp } from "react-icons/fa6";
-import Image from "next/image";
+import Image from "next/legacy/image";
 const Footer = () => {
   return (
     <footer className="bg-gray-100 dark:bg-gray-900 lg:py-8">

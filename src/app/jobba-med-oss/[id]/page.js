@@ -315,7 +315,7 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage"; // Firebase
 import { IoPersonSharp } from "react-icons/io5";
 import { FaLocationArrow } from "react-icons/fa6";
 import { FaIndustry } from "react-icons/fa";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Head from "next/head";
 import { ToastContainer, toast } from "react-toastify"; // Import react-toastify
 import "react-toastify/dist/ReactToastify.css"; // Import toast styles

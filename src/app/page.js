@@ -2,7 +2,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Slideshow from "./components/slidershow";
 import Card from "./components/card";
