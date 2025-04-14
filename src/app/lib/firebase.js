@@ -2,20 +2,21 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage"; 
+import { getAnalytics, isSupported } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDqV5OtMyMQpj96-IF8_9scGCjQVus9q88",
-  authDomain: "jgruppen-44878.firebaseapp.com",
-  databaseURL: "https://jgruppen-44878.firebaseio.com",
-  projectId: "jgruppen-44878",
-  storageBucket: "jgruppen-44878.appspot.com",
-  messagingSenderId: "971908012744",
-  appId: "1:971908012744:web:4b322aa619336c68fe63fd",
-  measurementId: "G-P8BR0J1868"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
@@ -25,4 +26,21 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app); // Initialize Storage
 
-export { db, storage }; // Export Firestore and Storage
+// Initialize Analytics (client-side only)
+let analytics = null;
+
+// Function to initialize analytics
+const initializeAnalytics = async () => {
+  if (typeof window !== 'undefined' && await isSupported()) {
+    analytics = getAnalytics(app);
+    return analytics;
+  }
+  return null;
+};
+
+// Initialize analytics if supported
+if (typeof window !== 'undefined') {
+  initializeAnalytics();
+}
+
+export { db, storage, analytics, initializeAnalytics }; // Export Firestore, Storage, and Analytics

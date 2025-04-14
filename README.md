@@ -2,6 +2,20 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+### Environment Variables Setup
+
+This project requires Firebase configuration. Before starting the development server:
+
+1. Copy `.env.example` to a new file named `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+2. Update the `.env` file with your Firebase project credentials
+
+**Note:** The `.env` file is gitignored and should never be committed to version control as it contains sensitive API keys.
+
+### Development Server
+
 First, run the development server:
 
 ```bash

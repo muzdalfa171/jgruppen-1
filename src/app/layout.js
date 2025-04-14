@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import AnalyticsDebug from "./components/AnalyticsDebug";
 
 
 // Custom font import (local fonts)
@@ -34,10 +35,13 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Triodion&display=swap"
           rel="stylesheet"
         />
+        {/* Google Analytics via Next.js third-parties integration */}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* We don't need the AnalyticsWrapper if we're using the Next.js GA component */}
         <Header />
         <div className="triodion-regular">
           <div className="font-wrapper">
@@ -45,8 +49,9 @@ export default function RootLayout({ children }) {
           </div>
         </div>
         <Footer />
-         {/* Google Analytics Component */}
-       
+        
+        {/* Debug component for development only */}
+        <AnalyticsDebug />
       </body>
     </html>
   );
