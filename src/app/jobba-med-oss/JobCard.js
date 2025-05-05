@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FiLinkedin, FiMail, FiArrowRight } from 'react-icons/fi';
 
-const JobCard = ({ job }) => {
+const JobCard = () => {
     const containerVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: {
@@ -90,6 +90,16 @@ const JobCard = ({ job }) => {
                         rel="noopener noreferrer"
                     >
                         <span className="mr-2">Electronics / automation junior technician</span>
+                        <FiArrowRight className="transform transition-transform duration-300 group-hover:translate-x-1" />
+                    </a>
+
+                    <a
+                        href="/files/car_mechanics.pdf"
+                        className="inline-flex items-center px-6 py-2 md:px-8 md:py-3 lg:px-10 lg:py-4 text-sm md:text-base lg:text-lg bg-[#4a536e] hover:bg-[#3a435e] text-white rounded-lg md:rounded-xl transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg md:hover:shadow-xl group"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="mr-2">Car / Truck Mechanics</span>
                         <FiArrowRight className="transform transition-transform duration-300 group-hover:translate-x-1" />
                     </a>
                 </motion.div>
